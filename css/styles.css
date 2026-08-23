@@ -184,6 +184,10 @@ a { color: var(--red-deep); }
 .legend-dot { width: 11px; height: 11px; border-radius: 50%; border: 2px solid var(--ink); display: inline-block; }
 .legend-dot.listed { background: var(--ink); }
 .legend-dot.candidate { background: var(--card); border-color: var(--gold); }
+.legend-exit {
+  width: 20px; height: 20px; display: inline-grid; place-items: center; border-radius: 50%;
+  background: #fff; color: var(--red-deep); border: 2px solid var(--red); font-size: 9px; font-style: normal; font-weight: 900;
+}
 .map-shell {
   position: relative; display: grid; grid-template-columns: minmax(0, 1fr); overflow: hidden; min-width: 0;
   background: var(--card); border: 1px solid var(--card-edge); border-radius: 16px;
@@ -228,6 +232,12 @@ a { color: var(--red-deep); }
   width: 34px; height: 34px; display: grid; place-items: center; border-radius: 9px 9px 9px 2px;
   background: var(--red); color: #fff; border: 3px solid #fff; box-shadow: 0 3px 12px rgba(140,17,20,.4);
   font-family: var(--title-font); font-size: 15px; font-weight: 800;
+}
+.exit-marker { background: transparent; border: 0; }
+.exit-marker span {
+  width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%;
+  background: rgba(255,255,255,.94); color: var(--red-deep); border: 3px solid var(--red);
+  box-shadow: 0 2px 8px rgba(38,34,28,.28); font-size: 8px; font-weight: 900;
 }
 .marker-cluster { background: rgba(176,27,30,.16); border-radius: 50%; }
 .marker-cluster div {

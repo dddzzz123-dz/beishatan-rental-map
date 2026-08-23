@@ -53,6 +53,7 @@
           <h2 id="mapHeading">小区到地铁站路线图</h2>
         </div>
         <div class="map-legend" aria-label="地图图例">
+          <span><i class="legend-exit">A</i>地铁出口</span>
           <span><i class="legend-dot listed"></i>贝壳有房源</span>
           <span><i class="legend-dot candidate"></i>高德补充</span>
         </div>
@@ -66,7 +67,7 @@
           <div class="route-hint"><span>↗</span> 路线将以交通红高亮</div>
         </aside>
       </div>
-      <p class="map-note">路线由高德 Web 服务计算，底图使用 OpenStreetMap。个别小区缺少入口坐标时以 POI 中心点起算，页面会明确标注。</p>
+      <p class="map-note">每个小区均比较 A、B1、B2、C 四个出口的实际步行路径，并显示最短的一条；步行路网与底图使用 OpenStreetMap，路径由 Valhalla 计算。个别小区缺少入口坐标时以 POI 中心点起算。</p>
     </section>
 
     <section class="section" aria-labelledby="commHeading">
@@ -89,7 +90,7 @@
   </main>
 
   <footer class="app-footer">
-    <p>房源采集自贝壳租房，路线与住宅 POI 来自高德 Web 服务，采集日期 2026-08-24。库存会变化；步行路线按高德当次规划结果展示，入口缺失时使用 POI 中心点。无追踪、无 Cookie、无密钥。</p>
+    <p>房源采集自贝壳租房，住宅 POI 来自高德；地铁出口及步行路网基于 OpenStreetMap，路径由 Valhalla 计算。库存会变化；入口缺失时使用 POI 中心点。无追踪、无 Cookie、无密钥。</p>
   </footer>
 
   <div class="compare-bar" id="compareBar" hidden>

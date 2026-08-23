@@ -681,7 +681,7 @@
         '<div class="info-kv"><b>图片</b><span>' + listings.filter(function (l) { return l.photoStatus === "multi"; }).length + " 套多图 · " + listings.length + " 套共" + listings.reduce(function (a, l) { return a + photoCountOf(l); }, 0) + " 张相册图</span></div>" +
       "</div>" +
       '<div class="info-note"><strong>重要说明</strong>：<ul>' +
-        "<li>地图中的步行距离和时间来自高德 Web 服务当次路径规划；入口缺失时以 POI 中心点起算，并在路线卡中标注。</li>" +
+        "<li>地图中的步行距离和时间来自 Valhalla/OSM 步行路网，并比较北沙滩站 A、B1、B2、C 四个出口后选择最短路线；入口缺失时以 POI 中心点起算。</li>" +
         "<li>库存与租金为采集时快照，<b>动态库存可能变化</b>；以贝壳页面实时为准。</li>" +
         "<li>“多图”按 ≥2 张真实房源图片判定；无图/单图房源已单独标注，不伪造成多图。</li>" +
         "<li>本页为纯静态工具，无第三方追踪、无 Cookie 读取、无密钥；外链使用 <code>noopener noreferrer</code>。</li>" +

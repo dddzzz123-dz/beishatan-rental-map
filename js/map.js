@@ -17,6 +17,19 @@
     .addTo(map)
     .bindTooltip("北沙滩地铁站", { direction: "top", offset: [0, -25] });
 
+  var exitById = {};
+  (data.station.exits || []).forEach(function (exit) {
+    exitById[exit.id] = exit;
+    var icon = L.divIcon({
+      className: "exit-marker",
+      html: "<span>" + escapeHtml(exit.id) + "</span>",
+      iconSize: [24, 24], iconAnchor: [12, 12],
+    });
+    L.marker(exit.location, { icon: icon, zIndexOffset: 1500, title: "北沙滩站 " + exit.name })
+      .addTo(map)
+      .bindTooltip("北沙滩站 " + exit.name + (exit.accessible ? " · 无障碍" : ""), { direction: "top", offset: [0, -10] });
+  });
+
   var markers = {};
   var markerGroup = L.markerClusterGroup({ showCoverageOnHover: false, maxClusterRadius: 38, spiderfyOnMaxZoom: true, disableClusteringAtZoom: 17 });
   var routeLayer = null;
@@ -31,11 +44,12 @@
   }
 
   function amapRouteUrl(item) {
-    var from = item.amapLocation.split(",");
-    var to = data.station.amapLocation.split(",");
+    var from = (item.routeOriginAmap || item.amapLocation).split(",");
+    var selectedExit = exitById[item.nearestExit];
+    var to = (selectedExit ? selectedExit.amapLocation : data.station.amapLocation).split(",");
     var query = new URLSearchParams({
       from: from[0] + "," + from[1] + "," + item.name,
-      to: to[0] + "," + to[1] + ",北沙滩地铁站",
+      to: to[0] + "," + to[1] + ",北沙滩地铁站" + (item.nearestExitName || ""),
       mode: "walk",
       policy: "1",
       src: "beishatan-rental-map",
@@ -51,19 +65,19 @@
       ? "路线从高德记录的小区入口起算。"
       : "高德未返回入口，本路线从小区 POI 中心点起算，到现场需再确认居民入口。";
     return (
-      '<span class="route-kicker">' + (item.withinWalkLimit ? "约 15 分钟步行圈内" : "超过 1.2 公里步行线") + "</span>" +
+      '<span class="route-kicker">步行至北沙滩站 ' + escapeHtml(item.nearestExitName || "入口") + "</span>" +
       "<h3>" + escapeHtml(item.name) + "</h3>" +
       "<p>" + escapeHtml(item.district + " · " + (item.address || "地址待补")) + "</p>" +
       '<span class="route-status ' + (listed ? "listed" : "candidate") + '">' + (listed ? "贝壳已有房源" : "高德补充候选") + "</span>" +
       '<div class="route-metrics">' +
-        '<div class="route-metric"><b>' + item.walkingM + '</b><span>步行米数</span></div>' +
+        '<div class="route-metric"><b>' + item.walkingM + '</b><span>至' + escapeHtml(item.nearestExit || "地铁") + '口米数</span></div>' +
         '<div class="route-metric"><b>' + minutes(item.walkingS) + '</b><span>预计分钟</span></div>' +
         '<div class="route-metric"><b>' + (listed ? item.inventory : "待查") + '</b><span>当前房源</span></div>' +
       "</div>" +
       (listed
         ? '<p>最低 ' + money(item.minRent) + " · 中位 " + money(item.medianRent) + " · " + item.multiPhoto + " 套多图</p>"
         : "<p>地图上确认存在，但当前贝壳样本未覆盖；不代表没有出租房。</p>") +
-      '<p class="route-caveat">' + escapeHtml(originNote) + "</p>" +
+      '<p class="route-caveat">已比较 A、B1、B2、C 四个出口；' + escapeHtml(originNote) + "</p>" +
       '<div class="route-actions">' +
         (listed ? '<button class="btn btn-primary" type="button" data-map-filter="' + escapeHtml(item.platformCommunity) + '">查看该小区房源</button>' : "") +
         '<a class="btn btn-ghost" href="' + amapRouteUrl(item) + '" target="_blank" rel="noopener noreferrer">在高德继续查看 ↗</a>' +
@@ -83,12 +97,20 @@
     routeLayer = L.layerGroup([casing, route]).addTo(map);
     panel.innerHTML = panelHtml(item);
     var bounds = route.getBounds();
-    bounds.extend(data.station.location);
-    if (options.focus !== false) map.fitBounds(bounds, { paddingTopLeft: [35, 35], paddingBottomRight: [35, 35], maxZoom: 17 });
-    if (marker) {
+    var selectedExit = exitById[item.nearestExit];
+    bounds.extend(selectedExit ? selectedExit.location : data.station.location);
+    (data.station.exits || []).forEach(function (exit) { bounds.extend(exit.location); });
+    function fitRoute() {
+      if (options.focus !== false) map.fitBounds(bounds, { paddingTopLeft: [35, 35], paddingBottomRight: [35, 35], maxZoom: 17 });
+    }
+    if (marker && options.focus !== false) {
       markerGroup.zoomToShowLayer(marker, function () {
         if (marker.getElement()) marker.getElement().classList.add("active");
+        fitRoute();
       });
+    } else {
+      if (marker && marker.getElement()) marker.getElement().classList.add("active");
+      fitRoute();
     }
   }
 
@@ -121,10 +143,11 @@
   });
 
   var initialBounds = L.latLngBounds([data.station.location]);
+  (data.station.exits || []).forEach(function (exit) { initialBounds.extend(exit.location); });
   data.communities.filter(function (item) { return item.withinWalkLimit; }).forEach(function (item) { initialBounds.extend(item.location); });
   map.fitBounds(initialBounds, { padding: [24, 24], maxZoom: 15 });
   var initial = data.communities.find(function (item) { return item.coverage === "beike_listed" && item.withinWalkLimit; });
-  if (initial) setActive(initial, { focus: false });
+  if (initial) setActive(initial);
 
   function escapeHtml(value) {
     return String(value == null ? "" : value)
