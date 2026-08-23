@@ -2,6 +2,8 @@
 
 面向手机的静态看房工具：在**北京 15 号线·北沙滩站**附近，从 69 套**整租两居/三居**中筛选房源，并在真实地图上查看住宅小区到地铁站的高德实际步行路线。
 
+**在线访问：** https://dddzzz123-dz.github.io/beishatan-rental-map/
+
 - 纯静态（HTML/CSS/JS），无后端、无构建；地图使用 Leaflet 与 OpenStreetMap。
 - 可直接用本地静态服务器打开，也可部署到 GitHub Pages。
 - 房源数据采集自贝壳，住宅 POI 与步行路径来自高德 Web 服务，均为 2026-08-24 快照。发布文件不包含任何 API Key。
