@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b01b1e">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b01b1e'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='34' font-weight='700' fill='white'%3E15%3C/text%3E%3C/svg%3E">
+  <meta name="description" content="北京北沙滩站附近整租两居/三居房源、住宅小区和高德实际步行路线交互地图。">
+  <title>北沙滩·看房手册｜整租两居/三居</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到内容</a>
+
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-badge" aria-hidden="true">15</span>
+        <div class="brand-text">
+          <h1 class="brand-title">北沙滩 · 看房手册</h1>
+          <p class="brand-sub"><span class="line-dot" aria-hidden="true"></span>北京 15号线·北沙滩站｜整租两居/三居</p>
+        </div>
+      </div>
+      <div class="summary" id="summary" aria-live="polite">
+        <div class="stat stat-current"><span id="statCurrent" class="stat-num">—</span><span class="stat-label">当前</span></div>
+        <div class="stat"><span id="statTotal" class="stat-num">—</span><span class="stat-label">总量</span></div>
+        <div class="stat"><span id="statMedian" class="stat-num">—</span><span class="stat-label">租金中位</span></div>
+        <div class="stat"><span id="statMulti" class="stat-num">—</span><span class="stat-label">多图</span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="toolbar" role="toolbar" aria-label="工具条">
+    <div class="toolbar-inner">
+      <button class="tool-btn" id="openFilter" type="button">筛选</button>
+      <button class="tool-btn" id="openSort" type="button">排序</button>
+      <button class="tool-btn tool-btn-fav" id="favToggle" type="button">只看收藏 <span class="fav-count" id="favCount">0</span></button>
+      <button class="tool-btn" id="openInfo" type="button">数据说明</button>
+    </div>
+  </div>
+
+  <div class="conditions" id="conditions" aria-live="polite"></div>
+
+  <main id="main" class="main">
+    <noscript><p class="noscript">本工具需要启用 JavaScript 才能加载房源数据。</p></noscript>
+
+    <section class="section map-section" aria-labelledby="mapHeading">
+      <div class="section-head map-heading">
+        <div>
+          <p class="eyebrow">真实道路 · 实际步行</p>
+          <h2 id="mapHeading">小区到地铁站路线图</h2>
+        </div>
+        <div class="map-legend" aria-label="地图图例">
+          <span><i class="legend-dot listed"></i>贝壳有房源</span>
+          <span><i class="legend-dot candidate"></i>高德补充</span>
+        </div>
+      </div>
+      <div class="map-shell">
+        <div id="rentalMap" class="rental-map" role="application" aria-label="北沙滩住宅小区和实际步行路线地图"></div>
+        <aside class="route-panel" id="routePanel" aria-live="polite">
+          <span class="route-kicker">点击地图上的小区</span>
+          <h3>查看实际步行路线</h3>
+          <p>实心点代表贝壳已有房源；空心点是高德发现、仍需回查库存的小区。</p>
+          <div class="route-hint"><span>↗</span> 路线将以交通红高亮</div>
+        </aside>
+      </div>
+      <p class="map-note">路线由高德 Web 服务计算，底图使用 OpenStreetMap。个别小区缺少入口坐标时以 POI 中心点起算，页面会明确标注。</p>
+    </section>
+
+    <section class="section" aria-labelledby="commHeading">
+      <div class="section-head">
+        <h2 id="commHeading">小区概览</h2>
+        <button class="collapse-btn" id="toggleComm" type="button">收起</button>
+      </div>
+      <div class="comm-grid" id="commGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="section" aria-labelledby="resultsHeading">
+      <div class="results-head">
+        <h2 id="resultsHeading">房源</h2>
+        <p class="results-meta" id="resultsMeta" aria-live="polite"></p>
+      </div>
+      <div class="cards" id="cards"></div>
+      <div class="empty" id="empty" hidden>没有符合当前条件的房源。请调整筛选或重置。</div>
+      <nav class="pagination" id="pagination" aria-label="分页"></nav>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>房源采集自贝壳租房，路线与住宅 POI 来自高德 Web 服务，采集日期 2026-08-24。库存会变化；步行路线按高德当次规划结果展示，入口缺失时使用 POI 中心点。无追踪、无 Cookie、无密钥。</p>
+  </footer>
+
+  <div class="compare-bar" id="compareBar" hidden>
+    <div class="compare-bar-inner">
+      <span class="compare-count" id="compareCount">已选 0 / 4</span>
+      <div class="compare-actions">
+        <button class="btn btn-ghost" id="compareClear" type="button">清空</button>
+        <button class="btn btn-primary" id="compareOpen" type="button">对比</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="scrim" id="scrim" hidden></div>
+
+  <div class="sheet" id="filterSheet" role="dialog" aria-modal="true" aria-label="筛选" hidden>
+    <div class="sheet-head"><h2>筛选</h2><button class="sheet-close" id="filterClose" type="button" aria-label="关闭筛选">×</button></div>
+    <div class="sheet-body">
+      <div class="field">
+        <span class="field-label" id="rangeLabel">租金范围（元/月）</span>
+        <div class="range-readout" id="rangeReadout"></div>
+        <div class="range" id="rangeWrap"></div>
+      </div>
+      <div class="field">
+        <span class="field-label">居室</span>
+        <div class="chip-group" id="roomChips"></div>
+      </div>
+      <div class="field">
+        <span class="field-label">图片</span>
+        <label class="check"><input type="checkbox" id="onlyMulti"><span>仅多图（≥2 张）</span></label>
+      </div>
+      <div class="field">
+        <label class="field-label" for="keyword">关键词</label>
+        <input type="search" id="keyword" class="text-input" inputmode="search" placeholder="小区 / 商圈 / 标签 / 户型…">
+      </div>
+      <div class="field">
+        <span class="field-label">小区（多选）</span>
+        <div class="comm-list" id="commList"></div>
+      </div>
+      <button class="btn btn-reset" id="resetFilters" type="button">一键重置</button>
+    </div>
+  </div>
+
+  <div class="sheet" id="sortSheet" role="dialog" aria-modal="true" aria-label="排序" hidden>
+    <div class="sheet-head"><h2>排序</h2><button class="sheet-close" id="sortClose" type="button" aria-label="关闭排序">×</button></div>
+    <div class="sheet-body" id="sortBody"></div>
+  </div>
+
+  <div class="sheet sheet-center" id="compareSheet" role="dialog" aria-modal="true" aria-label="对比" hidden>
+    <div class="sheet-head"><h2>对比房源（最多 4 套）</h2><button class="sheet-close" id="compareClose" type="button" aria-label="关闭对比">×</button></div>
+    <div class="sheet-body"><div class="compare-grid" id="compareGrid"></div></div>
+  </div>
+
+  <div class="sheet sheet-center" id="infoSheet" role="dialog" aria-modal="true" aria-label="数据说明" hidden>
+    <div class="sheet-head"><h2>数据说明</h2><button class="sheet-close" id="infoClose" type="button" aria-label="关闭数据说明">×</button></div>
+    <div class="sheet-body" id="infoBody"></div>
+  </div>
+
+  <script src="js/core.js"></script>
+  <script src="data/rentals.js"></script>
+  <script src="data/map-data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin=""></script>
+  <script src="js/map.js"></script>
+</body>
+</html>
