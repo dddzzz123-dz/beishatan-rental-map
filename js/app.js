@@ -42,6 +42,9 @@
 
   // ---- gallery index cache (per houseCode) ----
   var galleryIndex = {};
+  var detailHouse = null;
+  var detailPhotoIndex = 0;
+  var detailReturnFocus = null;
 
   // ---- dom refs ----
   var $ = function (id) { return document.getElementById(id); };
@@ -53,15 +56,15 @@
     pagination: $("pagination"),
     favToggle: $("favToggle"), favCount: $("favCount"),
     compareBar: $("compareBar"), compareCount: $("compareCount"), compareClear: $("compareClear"), compareOpen: $("compareOpen"),
-    compareGrid: $("compareGrid"),
+    compareGrid: $("compareGrid"), detailBody: $("detailBody"),
     scrim: $("scrim"),
   };
 
   var sheets = {
-    filter: $("filterSheet"), sort: $("sortSheet"), compare: $("compareSheet"), info: $("infoSheet"),
+    filter: $("filterSheet"), sort: $("sortSheet"), compare: $("compareSheet"), info: $("infoSheet"), detail: $("detailSheet"),
   };
   var sheetClose = {
-    filter: $("filterClose"), sort: $("sortClose"), compare: $("compareClose"), info: $("infoClose"),
+    filter: $("filterClose"), sort: $("sortClose"), compare: $("compareClose"), info: $("infoClose"), detail: $("detailClose"),
   };
   var filterEls = {
     rangeWrap: $("rangeWrap"), rangeReadout: $("rangeReadout"),
@@ -287,6 +290,7 @@
             : "") +
           '<div class="ph" hidden>暂无图片</div>' +
           pager + badge + arrows +
+          '<button class="gallery-open" type="button" data-action="detail" data-house="' + esc(l.houseCode) + '" aria-label="打开 ' + esc(title) + ' 大图详情"></button>' +
         "</div>" +
         '<div class="card-body">' +
           '<div class="rent-row">' +
@@ -300,6 +304,7 @@
           "</div>" +
           '<div class="tag-list">' + renderTags(l.tags) + "</div>" +
           '<div class="card-actions">' +
+            '<button type="button" class="btn btn-detail" data-action="detail" data-house="' + esc(l.houseCode) + '">大图详情</button>' +
             '<button type="button" class="btn btn-fav ' + isFav + '" data-action="fav" data-house="' + esc(l.houseCode) + '" aria-pressed="' + isFav + '">' + favLabel + "</button>" +
             '<button type="button" class="btn cmp-btn ' + isCmp + '" data-action="compare" data-house="' + esc(l.houseCode) + '" aria-pressed="' + isCmp + '">' + cmpLabel + "</button>" +
             '<a class="btn btn-link" href="' + esc(l.detailUrl) + '" target="_blank" rel="noopener noreferrer">查看贝壳原房源<span class="ext">↗</span></a>' +
@@ -355,6 +360,89 @@
   function listingByHouse(house) {
     for (var i = 0; i < listings.length; i++) if (listings[i].houseCode === house) return listings[i];
     return null;
+  }
+
+  /* ---------- full listing detail ---------- */
+  function detailPhotos(l) {
+    if (!l) return [];
+    return l.photos.length ? l.photos : (l.coverUrl ? [l.coverUrl] : []);
+  }
+
+  function openListingDetail(house, trigger) {
+    var l = listingByHouse(house);
+    if (!l) return;
+    detailHouse = house;
+    detailPhotoIndex = 0;
+    detailReturnFocus = trigger || document.activeElement;
+    renderListingDetail();
+    openSheet("detail");
+    document.body.classList.add("detail-open");
+    $("detailTitle").textContent = l.community + " · " + l.layout;
+    setDetailParam(house);
+    setTimeout(function () { $("detailClose").focus(); }, 0);
+  }
+
+  function renderListingDetail() {
+    var l = listingByHouse(detailHouse);
+    if (!l) return;
+    var photos = detailPhotos(l);
+    var n = photos.length;
+    if (n) detailPhotoIndex = (detailPhotoIndex + n) % n;
+    else detailPhotoIndex = 0;
+    var main = n
+      ? '<img class="detail-main-img" src="' + esc(photos[detailPhotoIndex]) + '" alt="' + esc(l.title) + '，第 ' + (detailPhotoIndex + 1) + '/' + n + ' 张" referrerpolicy="no-referrer">'
+      : '<div class="detail-no-photo">此房源暂无可用图片</div>';
+    var thumbs = photos.map(function (url, i) {
+      return '<button type="button" class="detail-thumb' + (i === detailPhotoIndex ? " is-active" : "") + '" data-detail-index="' + i + '" aria-label="查看第 ' + (i + 1) + ' 张图"><img src="' + esc(url) + '" alt="" loading="lazy" referrerpolicy="no-referrer"></button>';
+    }).join("");
+    var isFav = favs.indexOf(l.houseCode) !== -1;
+    var isCmp = compares.indexOf(l.houseCode) !== -1;
+    byId.detailBody.innerHTML =
+      '<div class="detail-gallery">' +
+        '<div class="detail-stage">' + main +
+          (n > 1 ? '<button class="detail-arrow prev" type="button" data-detail-step="-1" aria-label="上一张">‹</button><button class="detail-arrow next" type="button" data-detail-step="1" aria-label="下一张">›</button>' : "") +
+          '<span class="detail-counter">' + (n ? (detailPhotoIndex + 1) + " / " + n : "无图") + '</span>' +
+        '</div>' +
+        (n > 1 ? '<div class="detail-thumbs" aria-label="房源图片缩略图">' + thumbs + '</div>' : "") +
+      '</div>' +
+      '<aside class="detail-info">' +
+        '<div class="detail-price">¥' + formatMoney(l.rentYuanPerMonth) + '<span>/月</span></div>' +
+        '<h3>' + esc(l.title) + '</h3>' +
+        '<p class="detail-place">' + esc(l.community) + ' · ' + esc(l.businessArea) + ' · ' + esc(l.district) + '</p>' +
+        '<dl class="detail-facts">' +
+          '<div><dt>户型</dt><dd>' + esc(l.layout || "—") + '</dd></div>' +
+          '<div><dt>面积</dt><dd>' + esc(fmtArea(l.area) || "—") + '</dd></div>' +
+          '<div><dt>朝向</dt><dd>' + esc(l.orientation || "—") + '</dd></div>' +
+          '<div><dt>楼层</dt><dd>' + esc(l.floor || "—") + '</dd></div>' +
+          '<div><dt>维护</dt><dd>' + esc(l.maintenance || "未知") + '</dd></div>' +
+          '<div><dt>图片</dt><dd>' + n + ' 张</dd></div>' +
+        '</dl>' +
+        '<div class="tag-list detail-tags">' + renderTags(l.tags) + '</div>' +
+        '<p class="detail-note">库存和价格以贝壳页面实时信息为准。</p>' +
+        '<div class="detail-actions">' +
+          '<button type="button" class="btn btn-fav ' + (isFav ? "is-fav" : "") + '" data-detail-action="fav">' + (isFav ? "★ 已收藏" : "☆ 收藏") + '</button>' +
+          '<button type="button" class="btn cmp-btn ' + (isCmp ? "is-in" : "") + '" data-detail-action="compare">' + (isCmp ? "对比中" : "加入对比") + '</button>' +
+          '<a class="btn btn-link detail-source" href="' + esc(l.detailUrl) + '" target="_blank" rel="noopener noreferrer">查看贝壳原房源 <span class="ext">↗</span></a>' +
+        '</div>' +
+      '</aside>';
+    var activeThumb = byId.detailBody.querySelector(".detail-thumb.is-active");
+    if (activeThumb) activeThumb.scrollIntoView({ block: "nearest", inline: "center" });
+  }
+
+  function stepDetail(delta) {
+    var l = listingByHouse(detailHouse);
+    var n = detailPhotos(l).length;
+    if (n <= 1) return;
+    detailPhotoIndex = (detailPhotoIndex + delta + n) % n;
+    renderListingDetail();
+  }
+
+  function setDetailParam(house) {
+    try {
+      var url = new URL(window.location.href);
+      if (house) url.searchParams.set("listing", house); else url.searchParams.delete("listing");
+      history.replaceState(null, "", url.pathname + url.search + url.hash);
+    } catch (e) {}
   }
 
   /* ---------- pagination ---------- */
@@ -534,9 +622,16 @@
     openSheetName = name;
   }
   function closeSheets() {
+    var wasDetail = openSheetName === "detail";
     Object.keys(sheets).forEach(function (k) { sheets[k].hidden = true; });
     byId.scrim.hidden = true;
     openSheetName = null;
+    document.body.classList.remove("detail-open");
+    if (wasDetail) {
+      setDetailParam(null);
+      detailHouse = null;
+      if (detailReturnFocus && document.contains(detailReturnFocus)) detailReturnFocus.focus();
+    }
   }
 
   /* ---------- toast ---------- */
@@ -605,6 +700,7 @@
   }
 
   function initStateAndHandlers() {
+    var requestedListing = new URLSearchParams(window.location.search).get("listing");
     var s = loadState();
     state = Object.assign(state, s);
 
@@ -614,6 +710,8 @@
     renderInfo();
     render();
     persistState();
+
+    if (requestedListing && listingByHouse(requestedListing)) openListingDetail(requestedListing);
 
     // header fav count
     byId.favCount.textContent = String(favs.length);
@@ -633,6 +731,8 @@
     byId.scrim.addEventListener("click", closeSheets);
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") closeSheets();
+      else if (openSheetName === "detail" && e.key === "ArrowLeft") stepDetail(-1);
+      else if (openSheetName === "detail" && e.key === "ArrowRight") stepDetail(1);
     });
 
     // filter controls
@@ -671,6 +771,7 @@
       var action = btn.getAttribute("data-action");
       if (action === "fav") toggleFav(house);
       else if (action === "compare") toggleCompare(house);
+      else if (action === "detail") openListingDetail(house, btn);
       else if (action === "gallery-prev" || action === "gallery-next") {
         var gallery = btn.closest(".gallery");
         var house2 = gallery.getAttribute("data-gallery");
@@ -686,6 +787,29 @@
     byId.cards.addEventListener("touchstart", function (e) {
       var t = e.touches[0];
       tx = t.clientX; ty = t.clientY;
+    }, { passive: true });
+
+    byId.detailBody.addEventListener("click", function (e) {
+      var step = e.target.closest("[data-detail-step]");
+      var thumb = e.target.closest("[data-detail-index]");
+      var action = e.target.closest("[data-detail-action]");
+      if (step) stepDetail(Number(step.getAttribute("data-detail-step")));
+      else if (thumb) { detailPhotoIndex = Number(thumb.getAttribute("data-detail-index")); renderListingDetail(); }
+      else if (action && action.getAttribute("data-detail-action") === "fav") { toggleFav(detailHouse); renderListingDetail(); }
+      else if (action && action.getAttribute("data-detail-action") === "compare") { toggleCompare(detailHouse); renderListingDetail(); }
+    });
+
+    var detailTouchX = null, detailTouchY = null;
+    byId.detailBody.addEventListener("touchstart", function (e) {
+      if (!e.target.closest(".detail-stage")) return;
+      detailTouchX = e.touches[0].clientX; detailTouchY = e.touches[0].clientY;
+    }, { passive: true });
+    byId.detailBody.addEventListener("touchend", function (e) {
+      if (detailTouchX == null) return;
+      var dx = e.changedTouches[0].clientX - detailTouchX;
+      var dy = e.changedTouches[0].clientY - detailTouchY;
+      detailTouchX = null;
+      if (Math.abs(dx) >= 45 && Math.abs(dx) > Math.abs(dy)) stepDetail(dx < 0 ? 1 : -1);
     }, { passive: true });
     byId.cards.addEventListener("touchend", function (e) {
       if (e.touches.length) return;
