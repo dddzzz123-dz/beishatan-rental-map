@@ -92,8 +92,8 @@
     var marker = markers[item.id];
     if (marker && marker.getElement()) marker.getElement().classList.add("active");
     if (routeLayer) map.removeLayer(routeLayer);
-    var casing = L.polyline(item.route, { color: "#fffdf7", weight: 11, opacity: 0.9, lineCap: "round", lineJoin: "round" });
-    var route = L.polyline(item.route, { color: "#b01b1e", weight: 6, opacity: 0.96, lineCap: "round", lineJoin: "round", className: "active-route" });
+    var casing = L.polyline(item.route, { color: "#f8fffe", weight: 11, opacity: 0.92, lineCap: "round", lineJoin: "round" });
+    var route = L.polyline(item.route, { color: "#167d7f", weight: 6, opacity: 0.96, lineCap: "round", lineJoin: "round", className: "active-route" });
     routeLayer = L.layerGroup([casing, route]).addTo(map);
     panel.innerHTML = panelHtml(item);
     var bounds = route.getBounds();

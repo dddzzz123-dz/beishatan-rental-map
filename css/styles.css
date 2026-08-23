@@ -1,25 +1,25 @@
 /* ============================================================
-   北沙滩·看房手册 — “城市看房手册 / 编辑部资料夹”风格
-   温暖纸张色 + 深墨色 + 少量交通信号红/地铁紫强调
+   北沙滩·看房手册 — “清晨通勤 / 城市路线簿”风格
+   雾白底 + 湖蓝青绿 + 少量天空蓝与暖黄提示
    ============================================================ */
 
 :root {
-  --paper: #f4eee0;          /* 页面纸张 */
-  --paper-2: #efe7d6;        /* 深一档纸张 */
-  --card: #fffdf7;           /* 卡片纸 */
-  --card-edge: #e2d8c2;      /* 卡片描边 */
-  --ink: #26221c;            /* 深墨 */
-  --ink-2: #514b41;          /* 次级 */
-  --muted: #8a8073;          /* 弱化 */
-  --quiet: #b6ab99;          /* 更弱 */
-  --rule: #ded4bf;           /* 分隔线 */
-  --red: #b01b1e;            /* 地铁/交通信号红 强调 */
-  --red-deep: #8c1114;
-  --red-tint: #f5e3e2;
-  --plum: #5d3f7a;           /* 地铁紫 次级强调 */
-  --plum-tint: #ece4f2;
-  --gold: #a6791a;
-  --shadow: 0 1px 2px rgba(38,34,28,.08), 0 8px 24px rgba(38,34,28,.06);
+  --paper: #f3f8f7;          /* 雾白页面 */
+  --paper-2: #e7f1ef;        /* 浅水色底 */
+  --card: #ffffff;           /* 清透卡片 */
+  --card-edge: #cfe0dd;      /* 冷灰绿描边 */
+  --ink: #183239;            /* 深海墨色 */
+  --ink-2: #435e64;          /* 次级文字 */
+  --muted: #6f8589;          /* 弱化文字 */
+  --quiet: #9bafb1;          /* 更弱文字 */
+  --rule: #d9e6e3;           /* 分隔线 */
+  --red: #167d7f;            /* 主色：湖蓝青绿 */
+  --red-deep: #0b6267;
+  --red-tint: #def2ef;
+  --plum: #2f78a1;           /* 次级：地铁天空蓝 */
+  --plum-tint: #e3f1f8;
+  --gold: #d7973e;           /* 待补房源提示 */
+  --shadow: 0 1px 2px rgba(24,50,57,.06), 0 10px 28px rgba(24,50,57,.07);
   --radius: 12px;
   --radius-s: 8px;
   --title-font: "Songti SC", "Noto Serif SC", "Source Han Serif SC", "STSong", "SimSun", Georgia, serif;
@@ -35,7 +35,8 @@ body {
   font-family: var(--body-font);
   color: var(--ink);
   background:
-    linear-gradient(var(--paper-2), var(--paper-2)) top / 100% 6px no-repeat,
+    radial-gradient(circle at 88% -10%, rgba(86,177,171,.14), transparent 32rem),
+    linear-gradient(90deg, var(--red), #4eaaa5 55%, #77b9d2) top / 100% 6px no-repeat,
     var(--paper);
   line-height: 1.45;
   font-size: 15px;
@@ -58,7 +59,7 @@ a { color: var(--red-deep); }
 /* ---------- Header ---------- */
 .app-header {
   position: sticky; top: 0; z-index: 30;
-  background: rgba(244,238,224,.96);
+  background: rgba(243,248,247,.94);
   backdrop-filter: blur(4px);
   border-bottom: 1px solid var(--rule);
 }
@@ -92,7 +93,7 @@ a { color: var(--red-deep); }
 /* ---------- Toolbar ---------- */
 .toolbar {
   position: sticky; top: 78px; z-index: 25;
-  background: rgba(244,238,224,.95); backdrop-filter: blur(4px);
+  background: rgba(243,248,247,.93); backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--rule);
 }
 .toolbar-inner {
@@ -123,14 +124,14 @@ a { color: var(--red-deep); }
 .chip {
   display: inline-flex; align-items: center; gap: 6px;
   background: var(--red-tint); color: var(--red-deep);
-  border: 1px solid #e8c8c6; padding: 5px 10px; border-radius: 8px; font-size: 12.5px; font-weight: 600;
+  border: 1px solid #b8dfdb; padding: 5px 10px; border-radius: 8px; font-size: 12.5px; font-weight: 600;
   min-height: 38px;
 }
 .chip button {
   border: 0; background: transparent; padding: 0; font-size: 18px; line-height: 1;
   color: var(--red-deep); border-radius: 50%; height: 28px; width: 28px; display: grid; place-items: center;
 }
-.chip button:hover { background: rgba(176,27,30,.12); }
+.chip button:hover { background: rgba(22,125,127,.12); }
 .chip-reset {
   background: var(--paper-2); color: var(--ink-2); border: 1px solid var(--rule);
   padding: 5px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 600; min-height: 32px;
@@ -193,7 +194,7 @@ a { color: var(--red-deep); }
   background: var(--card); border: 1px solid var(--card-edge); border-radius: 16px;
   box-shadow: var(--shadow);
 }
-.rental-map { width: 100%; min-width: 0; height: 430px; background: #ddd7c9; z-index: 1; }
+.rental-map { width: 100%; min-width: 0; height: 430px; background: #dbe9e8; z-index: 1; }
 .route-panel {
   position: relative; z-index: 2; min-width: 0; padding: 15px; border-top: 1px solid var(--rule);
   background: var(--card);
@@ -209,19 +210,19 @@ a { color: var(--red-deep); }
 .route-metric span { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; }
 .route-status { display: inline-flex; margin-top: 10px; padding: 4px 8px; border-radius: 999px; font-size: 11px; font-weight: 700; }
 .route-status.listed { color: #fff; background: var(--ink); }
-.route-status.candidate { color: #73540f; background: #f3e5b9; }
+.route-status.candidate { color: #805315; background: #fff0d5; }
 .route-actions { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; margin-top: 12px; }
 .route-actions .btn { min-width: 0; text-decoration: none; }
 .route-caveat { margin-top: 9px !important; color: var(--red-deep) !important; font-size: 11px !important; }
 .map-note { margin: 8px 2px 0; color: var(--muted); font-size: 11.5px; }
 .leaflet-container { font-family: var(--body-font); }
 .leaflet-control-attribution { font-size: 9px; }
-.active-route { filter: drop-shadow(0 1px 2px rgba(140,17,20,.55)); }
+.active-route { filter: drop-shadow(0 1px 2px rgba(11,98,103,.48)); }
 .leaflet-control-zoom a { color: var(--ink); }
 .map-marker { background: transparent; border: 0; }
 .map-marker span {
   width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%;
-  border: 3px solid var(--card); box-shadow: 0 2px 8px rgba(38,34,28,.35);
+  border: 3px solid var(--card); box-shadow: 0 2px 8px rgba(24,50,57,.3);
   transition: transform .15s ease;
 }
 .map-marker.listed span { background: var(--ink); }
@@ -230,19 +231,19 @@ a { color: var(--red-deep); }
 .station-marker { background: transparent; border: 0; }
 .station-marker span {
   width: 34px; height: 34px; display: grid; place-items: center; border-radius: 9px 9px 9px 2px;
-  background: var(--red); color: #fff; border: 3px solid #fff; box-shadow: 0 3px 12px rgba(140,17,20,.4);
+  background: var(--red); color: #fff; border: 3px solid #fff; box-shadow: 0 3px 12px rgba(11,98,103,.38);
   font-family: var(--title-font); font-size: 15px; font-weight: 800;
 }
 .exit-marker { background: transparent; border: 0; }
 .exit-marker span {
   width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%;
   background: rgba(255,255,255,.94); color: var(--red-deep); border: 3px solid var(--red);
-  box-shadow: 0 2px 8px rgba(38,34,28,.28); font-size: 8px; font-weight: 900;
+  box-shadow: 0 2px 8px rgba(24,50,57,.26); font-size: 8px; font-weight: 900;
 }
-.marker-cluster { background: rgba(176,27,30,.16); border-radius: 50%; }
+.marker-cluster { background: rgba(22,125,127,.16); border-radius: 50%; }
 .marker-cluster div {
   width: 34px; height: 34px; margin: 5px; display: grid; place-items: center; border-radius: 50%;
-  background: var(--red); color: #fff; border: 2px solid var(--card); box-shadow: 0 2px 10px rgba(140,17,20,.35);
+  background: var(--red); color: #fff; border: 2px solid var(--card); box-shadow: 0 2px 10px rgba(11,98,103,.34);
   font-family: var(--title-font); font-weight: 800;
 }
 .marker-cluster span { line-height: 1; }
@@ -271,7 +272,7 @@ a { color: var(--red-deep); }
 .gallery .ph {
   position: absolute; inset: 0; display: grid; place-items: center;
   color: var(--muted); background:
-    repeating-linear-gradient(45deg, var(--paper-2), var(--paper-2) 12px, #e9e0cf 12px, #e9e0cf 24px);
+  repeating-linear-gradient(45deg, var(--paper-2), var(--paper-2) 12px, #dcebea 12px, #dcebea 24px);
   font-size: 13px; padding: 12px; text-align: center;
 }
 .gallery-open {
@@ -324,8 +325,8 @@ a { color: var(--red-deep); }
   font-size: 11.5px; color: var(--ink-2); background: var(--paper-2);
   border: 1px solid var(--rule); border-radius: 6px; padding: 2px 7px; white-space: nowrap;
 }
-.tag.tag-plum { color: var(--plum); background: var(--plum-tint); border-color: #d8cbe4; }
-.tag.tag-red { color: var(--red-deep); background: var(--red-tint); border-color: #e8c8c6; }
+.tag.tag-plum { color: var(--plum); background: var(--plum-tint); border-color: #bfdde9; }
+.tag.tag-red { color: var(--red-deep); background: var(--red-tint); border-color: #b8dfdb; }
 
 .card-actions {
   display: flex; flex-wrap: wrap; gap: 8px; align-items: stretch;
@@ -341,15 +342,15 @@ a { color: var(--red-deep); }
 .btn-primary:hover { background: var(--red-deep); }
 .btn-ghost { background: var(--paper-2); color: var(--ink); border: 1px solid var(--rule); }
 .btn-ghost:hover { border-color: var(--muted); }
-.btn-detail { background: var(--red-tint); color: var(--red-deep); border: 1px solid #e8c8c6; }
-.btn-detail:hover { background: #f3deda; }
+.btn-detail { background: var(--red-tint); color: var(--red-deep); border: 1px solid #b8dfdb; }
+.btn-detail:hover { background: #cdeae7; }
 .btn-icon { width: 44px; flex: 0 0 auto; padding: 0; }
 .btn-fav { background: var(--paper-2); border: 1px solid var(--rule); color: var(--ink); }
-.btn-fav.is-fav { background: var(--red-tint); color: var(--red-deep); border-color: #e8c8c6; }
+.btn-fav.is-fav { background: var(--red-tint); color: var(--red-deep); border-color: #b8dfdb; }
 .btn-link {
   flex: 1 1 128px; min-width: 0; background: var(--ink); color: #fff; text-decoration: none;
 }
-.btn-link:hover { background: #000; }
+.btn-link:hover { background: #0d242a; }
 .btn-link .ext { font-size: 12px; opacity: .8; }
 .cmp-btn { flex: 0 0 auto; }
 .cmp-btn.is-in { background: var(--plum); color: #fff; border-color: var(--plum); }
@@ -386,7 +387,7 @@ a { color: var(--red-deep); }
 
 /* ---------- Scrim & sheets ---------- */
 [hidden] { display: none !important; }
-.scrim { position: fixed; inset: 0; z-index: 50; background: rgba(30,26,20,.5); }
+.scrim { position: fixed; inset: 0; z-index: 50; background: rgba(12,35,41,.52); }
 .sheet {
   position: fixed; left: 50%; bottom: 0; transform: translateX(-50%);
   width: 100%; max-width: 560px; max-height: 88vh; z-index: 60;
@@ -419,7 +420,7 @@ body.detail-open { overflow: hidden; }
 }
 .detail-head {
   min-height: 64px; padding: max(10px, env(safe-area-inset-top)) 14px 10px;
-  border-bottom: 1px solid var(--rule); background: rgba(248,244,235,.96);
+  border-bottom: 1px solid var(--rule); background: rgba(243,248,247,.96);
   display: flex; align-items: center; justify-content: space-between; gap: 12px; flex: 0 0 auto;
 }
 .detail-head h2 { margin: 1px 0 0; font-size: 17px; line-height: 1.25; }
