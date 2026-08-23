@@ -10,6 +10,17 @@ function assert(condition, message) {
   console.log("ok  " + message);
 }
 
+function distanceM(a, b) {
+  const radius = 6371000;
+  const rad = (value) => value * Math.PI / 180;
+  const lat1 = rad(a[0]);
+  const lat2 = rad(b[0]);
+  const dlat = lat2 - lat1;
+  const dlon = rad(b[1] - a[1]);
+  const value = Math.sin(dlat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dlon / 2) ** 2;
+  return 2 * radius * Math.asin(Math.sqrt(value));
+}
+
 assert(JSON.stringify(actualExits) === JSON.stringify(expectedExits), "北沙滩四个出口完整");
 assert(data.communities.length === 57, "地图小区总数为 57");
 assert(data.communities.every((item) => expectedExits.includes(item.nearestExit)), "每个小区均绑定最近出口");
@@ -17,6 +28,11 @@ assert(data.communities.every((item) => item.walkingM > 0 && item.walkingS > 0),
 assert(data.communities.every((item) => Array.isArray(item.route) && item.route.length >= 2), "每个小区均有完整路线折线");
 assert(data.communities.every((item) => item.withinWalkLimit === (item.walkingM <= data.walkLimitM)), "步行圈状态与出口路线米数一致");
 
-const fallback = data.communities.filter((item) => item.routeQualityNote);
-assert(fallback.length === 1 && fallback[0].name === "海淀区清华东路9号院", "异常绕路仅保留一条经验证的高德回退路线");
+assert(data.routeProvider === "AMap Web Service walking v5", "全站路线来源为高德步行路径规划");
+assert(data.communities.every((item) => item.routeProvider === data.routeProvider), "每个小区均使用同一高德路线来源");
+assert(data.communities.every((item) => !item.routeQualityNote), "高德刷新后无遗留回退路线标记");
+assert(data.communities.every((item) => {
+  const exit = data.station.exits.find((candidate) => candidate.id === item.nearestExit);
+  return exit && distanceM(item.route[item.route.length - 1], exit.location) < 30;
+}), "每条高德路线均实际终止于标记出口附近");
 console.log("MAP ALL PASS ✔");

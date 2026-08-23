@@ -6,7 +6,7 @@
 
 - 纯静态（HTML/CSS/JS），无后端、无构建；地图使用 Leaflet 与 OpenStreetMap。
 - 可直接用本地静态服务器打开，也可部署到 GitHub Pages。
-- 房源数据采集自贝壳，住宅 POI 来自高德；出口与步行路径来自 OpenStreetMap/Valhalla 静态快照。发布文件不包含任何 API Key。
+- 房源数据采集自贝壳，住宅 POI 与四出口步行路径来自高德 Web 服务静态快照；底图使用 OpenStreetMap。发布文件不包含任何 API Key。
 
 ## 打开方式
 
@@ -27,7 +27,7 @@ GitHub Pages：把 `index.html`、`css/`、`js/`、`data/` 上传到仓库并开
 ```
 beishatan-rental-map/
   index.html          页面骨架（语义化、含无障碍）
-  css/styles.css      样式（纸张/深墨/地铁红紫，移动端优先）
+  css/styles.css      样式（雾白/湖蓝青绿/天空蓝，移动端优先）
   js/core.js          纯数据逻辑（筛选/排序/分页/统计），Node 可测
   js/app.js           前端状态与渲染（照片、对比、收藏、URL 状态）
   js/map.js           地图标记、路线高亮、房源筛选联动
@@ -38,6 +38,7 @@ beishatan-rental-map/
   data/community-summary.csv 小区汇总副本（只读保留）
   test/verify.js      Node 逻辑校验脚本
   scripts/build_map_data.py 从研究输出生成无密钥地图数据
+  scripts/rebuild_amap_exit_routes.py 用环境变量中的高德 Key 刷新四出口路线快照
   README.md
 ```
 
@@ -45,7 +46,7 @@ beishatan-rental-map/
 
 - 顶部随筛选实时变化的“当前 X 套”，并显示总量、租金中位数、多图数量。
 - 真实地图展示 57 个小区点位：贝壳已有房源与高德补充候选使用不同标记。
-- 地图标记北沙滩站 A、B1、B2、C 四个出口；点击小区后比较四个出口的步行路网距离，以交通红高亮最短路线，并显示目标出口、米数、预计分钟、路线起点类型和当前库存。
+- 地图标记北沙滩站 A、B1、B2、C 四个出口；点击小区后比较四个出口的高德步行距离，以湖蓝青绿高亮最短路线，并显示目标出口、米数、预计分钟、路线起点类型和当前库存。
 - 地图与房源列表双向联动；可从路线卡直接筛选该小区房源，或跳转高德继续查看。
 - 筛选：租金双端滑动、两居/三居、小区多选、仅多图、关键词、一键重置；条件以顶部可移除 chip 呈现。
 - 排序：租金低→高、高→低、图片多→少、最新维护优先（无模糊/“接近某价”排序）。
@@ -59,7 +60,7 @@ beishatan-rental-map/
 
 ## 关键边界（诚实声明）
 
-- 步行距离和时间来自 Valhalla/OSM 步行路网的实际路径规划，并逐一比较四个地铁出口，不使用直线距离冒充步行距离。
+- 步行距离和时间来自高德 Web 服务步行路径规划，并逐一比较四个地铁出口，不使用直线距离冒充步行距离。
 - 高德没有返回入口坐标时从 POI 中心点起算，路线卡会明确提示，仍需线下确认真实居民入口。
 - “高德补充”只代表地图上存在住宅 POI，不代表当前一定有房出租。
 - 无图/单图房源已单独标注（`none_or_single`），不伪造成多图；多图按 ≥2 张真实图片判定。
@@ -73,6 +74,14 @@ beishatan-rental-map/
 node test/verify.js
 node test/verify-map.js
 ```
+
+刷新路线时只需在本机设置 `AMAP_WEB_KEY` 后运行：
+
+```bash
+python scripts/rebuild_amap_exit_routes.py
+```
+
+脚本会在仓库外保存不含密钥的断点缓存，并仅将无密钥路线坐标写入 `data/map-data.js`。
 
 校验内容：69 套总量、10 个小区、67 套多图、2 套无图/单图、602 张相册图、默认无筛选=69、居室/仅多图/租金区间/关键词筛选、租金升序、分页 8/页与 9 页、小区汇总一致等。
 
