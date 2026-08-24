@@ -201,6 +201,13 @@ a { color: var(--red-deep); }
   border-radius: 10px; background: rgba(255,255,255,.94); color: var(--red-deep);
   box-shadow: var(--shadow); text-align: center; font-size: 13px; pointer-events: none;
 }
+.map-gesture-hint {
+  margin: 0 0 6px 6px; padding: 6px 9px; border: 1px solid rgba(11,98,103,.26);
+  border-radius: 999px; background: rgba(255,255,255,.9); color: var(--red-deep);
+  box-shadow: 0 2px 8px rgba(24,50,57,.13); font-size: 11px; font-weight: 700;
+  letter-spacing: .02em; pointer-events: none; transition: opacity .2s ease, transform .2s ease;
+}
+.map-gesture-hint.is-dismissed { opacity: 0; transform: translateY(4px); }
 .route-panel {
   position: relative; z-index: 2; min-width: 0; padding: 15px; border-top: 1px solid var(--rule);
   background: var(--card);

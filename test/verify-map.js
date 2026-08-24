@@ -45,4 +45,5 @@ assert(fs.statSync(basemap.image).size > 500000, "高德底图图片已随网站
 assert(indexHtml.includes("vendor/leaflet/leaflet.js") && !indexHtml.includes("unpkg.com"), "地图运行库不再依赖海外 CDN");
 assert(!indexHtml.includes("tile.openstreetmap.org"), "手机端不再请求 OpenStreetMap 在线瓦片");
 assert(mapJs.includes("L.circleMarker") && !mapJs.includes("markerClusterGroup"), "小区使用自适应位置光斑且不再聚合吞并");
+assert(mapJs.includes("touchZoom: true") && mapJs.includes("scrollWheelZoom: true"), "双指与鼠标滚轮缩放均显式启用");
 console.log("MAP ALL PASS ✔");

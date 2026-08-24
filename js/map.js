@@ -11,7 +11,19 @@
     return;
   }
 
-  var map = L.map(mapEl, { zoomControl: true, minZoom: 13, maxZoom: 18, scrollWheelZoom: false });
+  var map = L.map(mapEl, {
+    zoomControl: true,
+    minZoom: 13,
+    maxZoom: 18,
+    dragging: true,
+    touchZoom: true,
+    scrollWheelZoom: true,
+    doubleClickZoom: true,
+    boxZoom: true,
+    keyboard: true,
+    wheelDebounceTime: 24,
+    wheelPxPerZoomLevel: 72,
+  });
   if (basemap && basemap.image && basemap.bounds) {
     var baseOverlay = L.imageOverlay(basemap.image, basemap.bounds, { opacity: 1, interactive: false }).addTo(map);
     map.setMaxBounds(L.latLngBounds(basemap.bounds).pad(-0.02));
@@ -22,6 +34,21 @@
   } else {
     mapEl.insertAdjacentHTML("beforeend", '<p class="map-load-error">高德底图配置缺失，小区点位和路线数据仍可使用。</p>');
   }
+
+  var gestureControl = L.control({ position: "bottomleft" });
+  gestureControl.onAdd = function () {
+    var hint = L.DomUtil.create("div", "map-gesture-hint");
+    hint.textContent = L.Browser.touch ? "双指缩放 · 单指拖动" : "滚轮缩放 · 拖动地图";
+    L.DomEvent.disableClickPropagation(hint);
+    return hint;
+  };
+  gestureControl.addTo(map);
+  function dismissGestureHint() {
+    var hint = mapEl.querySelector(".map-gesture-hint");
+    if (hint) hint.classList.add("is-dismissed");
+  }
+  map.once("zoomstart", dismissGestureHint);
+  map.once("dragstart", dismissGestureHint);
 
   var stationIcon = L.divIcon({ className: "station-marker", html: "<span>15</span>", iconSize: [34, 34], iconAnchor: [17, 30] });
   L.marker(data.station.location, { icon: stationIcon, zIndexOffset: 1000 })
@@ -163,6 +190,7 @@
   });
 
   map.on("zoomend", function () {
+    mapEl.dataset.zoom = String(map.getZoom());
     Object.keys(markers).forEach(function (id) {
       var marker = markers[id];
       marker.setRadius(zoneRadius(marker.options.communityItem, id === activeId));
@@ -187,6 +215,7 @@
   (data.station.exits || []).forEach(function (exit) { initialBounds.extend(exit.location); });
   data.communities.filter(function (item) { return item.withinWalkLimit; }).forEach(function (item) { initialBounds.extend(item.location); });
   map.fitBounds(initialBounds, { padding: [24, 24], maxZoom: 15 });
+  mapEl.dataset.zoom = String(map.getZoom());
   var initial = data.communities.find(function (item) { return item.coverage === "beike_listed" && item.withinWalkLimit; });
   if (initial) setActive(initial);
 
