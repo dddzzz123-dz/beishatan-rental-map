@@ -2,15 +2,26 @@
   "use strict";
 
   var data = window.MAP_DATA;
+  var basemap = window.AMAP_BASEMAP;
   var panel = document.getElementById("routePanel");
   var mapEl = document.getElementById("rentalMap");
-  if (!data || !mapEl || !window.L) return;
+  if (!data || !mapEl) return;
+  if (!window.L) {
+    mapEl.innerHTML = '<p class="map-load-error">地图运行库加载失败，请刷新页面重试。</p>';
+    return;
+  }
 
-  var map = L.map(mapEl, { zoomControl: true, minZoom: 13, maxZoom: 19, scrollWheelZoom: false });
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>',
-  }).addTo(map);
+  var map = L.map(mapEl, { zoomControl: true, minZoom: 13, maxZoom: 18, scrollWheelZoom: false });
+  if (basemap && basemap.image && basemap.bounds) {
+    var baseOverlay = L.imageOverlay(basemap.image, basemap.bounds, { opacity: 1, interactive: false }).addTo(map);
+    map.setMaxBounds(L.latLngBounds(basemap.bounds).pad(-0.02));
+    baseOverlay.on("error", function () {
+      mapEl.insertAdjacentHTML("beforeend", '<p class="map-load-error">高德底图图片加载失败，请刷新页面重试；小区点位和路线数据仍可使用。</p>');
+    });
+    map.attributionControl.addAttribution('底图 &copy; <a href="https://www.amap.com/" target="_blank" rel="noopener noreferrer">高德地图</a>');
+  } else {
+    mapEl.insertAdjacentHTML("beforeend", '<p class="map-load-error">高德底图配置缺失，小区点位和路线数据仍可使用。</p>');
+  }
 
   var stationIcon = L.divIcon({ className: "station-marker", html: "<span>15</span>", iconSize: [34, 34], iconAnchor: [17, 30] });
   L.marker(data.station.location, { icon: stationIcon, zIndexOffset: 1000 })

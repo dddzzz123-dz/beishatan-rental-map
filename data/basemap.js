@@ -1,0 +1,1 @@
+window.AMAP_BASEMAP={"provider":"AMap static map Web Service","image":"assets/amap-basemap.png","bounds":[[39.9665513,116.3182167],[40.0337639,116.405967]],"center":[40.0001426,116.362063],"sourceZoom":15,"imageSize":[2048,2048],"generatedAt":"2026-08-25T00:10:10+08:00"};

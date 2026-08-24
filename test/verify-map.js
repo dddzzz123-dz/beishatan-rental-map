@@ -2,6 +2,9 @@ const fs = require("fs");
 
 const source = fs.readFileSync("data/map-data.js", "utf8").trim();
 const data = JSON.parse(source.slice("window.MAP_DATA=".length, -1));
+const basemapSource = fs.readFileSync("data/basemap.js", "utf8").trim();
+const basemap = JSON.parse(basemapSource.slice("window.AMAP_BASEMAP=".length, -1));
+const indexHtml = fs.readFileSync("index.html", "utf8");
 const expectedExits = ["A", "B1", "B2", "C"];
 const actualExits = data.station.exits.map((exit) => exit.id);
 
@@ -35,4 +38,9 @@ assert(data.communities.every((item) => {
   const exit = data.station.exits.find((candidate) => candidate.id === item.nearestExit);
   return exit && distanceM(item.route[item.route.length - 1], exit.location) < 30;
 }), "每条高德路线均实际终止于标记出口附近");
+assert(basemap.provider === "AMap static map Web Service", "底图来源为高德静态地图服务");
+assert(Array.isArray(basemap.bounds) && basemap.bounds.length === 2, "高德底图具有可用地理边界");
+assert(fs.statSync(basemap.image).size > 500000, "高德底图图片已随网站本地发布");
+assert(indexHtml.includes("vendor/leaflet/leaflet.js") && !indexHtml.includes("unpkg.com"), "地图运行库不再依赖海外 CDN");
+assert(!indexHtml.includes("tile.openstreetmap.org"), "手机端不再请求 OpenStreetMap 在线瓦片");
 console.log("MAP ALL PASS ✔");

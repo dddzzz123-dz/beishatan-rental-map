@@ -7,8 +7,8 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23167d7f'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='34' font-weight='700' fill='white'%3E15%3C/text%3E%3C/svg%3E">
   <meta name="description" content="北京北沙滩站附近整租两居/三居房源、住宅小区和高德实际步行路线交互地图。">
   <title>北沙滩租房路线地图｜整租两居/三居</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="vendor/leaflet.markercluster/MarkerCluster.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -67,7 +67,7 @@
           <div class="route-hint"><span>↗</span> 路线将以湖蓝青绿高亮</div>
         </aside>
       </div>
-      <p class="map-note">每个小区均通过高德步行路径规划比较 A、B1、B2、C 四个出口，并显示最短的一条；底图使用 OpenStreetMap。个别小区缺少入口坐标时以 POI 中心点起算。</p>
+      <p class="map-note">每个小区均通过高德步行路径规划比较 A、B1、B2、C 四个出口，并显示最短的一条；底图为本站托管的高德静态地图，手机无需连接海外瓦片服务。个别小区缺少入口坐标时以 POI 中心点起算。</p>
     </section>
 
     <section class="section" aria-labelledby="commHeading">
@@ -90,7 +90,7 @@
   </main>
 
   <footer class="app-footer">
-    <p>房源采集自贝壳租房，住宅 POI 与步行路径来自高德 Web 服务；底图使用 OpenStreetMap。库存会变化；入口缺失时使用 POI 中心点。无追踪、无 Cookie、网页不含 API Key。</p>
+    <p>房源采集自贝壳租房，住宅 POI、步行路径和静态底图来自高德 Web 服务。地图运行库与底图均由本站托管；库存会变化，入口缺失时使用 POI 中心点。无追踪、无 Cookie、网页不含 API Key。</p>
   </footer>
 
   <div class="compare-bar" id="compareBar" hidden>
@@ -162,9 +162,10 @@
   <script src="js/core.js"></script>
   <script src="data/rentals.js"></script>
   <script src="data/map-data.js"></script>
+  <script src="data/basemap.js"></script>
   <script src="js/app.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin=""></script>
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="vendor/leaflet.markercluster/leaflet.markercluster.js"></script>
   <script src="js/map.js"></script>
 </body>
 </html>

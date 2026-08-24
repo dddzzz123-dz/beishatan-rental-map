@@ -4,9 +4,9 @@
 
 **在线访问：** https://dddzzz123-dz.github.io/beishatan-rental-map/
 
-- 纯静态（HTML/CSS/JS），无后端、无构建；地图使用 Leaflet 与 OpenStreetMap。
+- 纯静态（HTML/CSS/JS），无后端、无构建；地图交互使用本站托管的 Leaflet，高德静态底图也随网站发布。
 - 可直接用本地静态服务器打开，也可部署到 GitHub Pages。
-- 房源数据采集自贝壳，住宅 POI 与四出口步行路径来自高德 Web 服务静态快照；底图使用 OpenStreetMap。发布文件不包含任何 API Key。
+- 房源数据采集自贝壳，住宅 POI、四出口步行路径与底图来自高德 Web 服务静态快照。发布文件不包含任何 API Key，也不依赖国内移动网络较难访问的海外地图瓦片/CDN。
 
 ## 打开方式
 
@@ -35,10 +35,13 @@ beishatan-rental-map/
   data/rentals.json   输入数据副本（只读保留）
   data/rentals.csv    输入数据副本（只读保留）
   data/map-data.js    已脱敏的 POI、距离与步行路线折线
+  data/basemap.js     高德静态底图边界元数据（无密钥）
+  assets/amap-basemap.png  构建时下载、随站点发布的高德底图
   data/community-summary.csv 小区汇总副本（只读保留）
   test/verify.js      Node 逻辑校验脚本
   scripts/build_map_data.py 从研究输出生成无密钥地图数据
   scripts/rebuild_amap_exit_routes.py 用环境变量中的高德 Key 刷新四出口路线快照
+  scripts/fetch_amap_basemap.py 用环境变量中的高德 Key 刷新静态底图
   README.md
 ```
 
@@ -89,6 +92,6 @@ python scripts/rebuild_amap_exit_routes.py
 
 - “最新维护优先”依赖贝壳维护文本（“今天维护 / N天前维护 / null”），`null` 视为未知并排最后；维护文本字段本身可能不精确。
 - 图片为贝壳 CDN 直链；若原图失效，卡片会显示“图片加载失败”占位，不自动替换。
-- 地图底图依赖 OpenStreetMap 在线瓦片；离线打开时房源功能仍可用，但地图可能无法显示。
+- 高德底图是构建时生成的静态快照；在覆盖范围内可以缩放、拖动和叠加路线，但不会像高德 JS 地图那样在任意缩放级别动态加载新道路。刷新底图需运行 `python scripts/fetch_amap_basemap.py`。
 - `file://` 打开时 URL 查询参数仍可写，但 `history.replaceState` 在部分环境可能受限（已用 `try/catch` 兜底）。
 - 无第三方接口，无服务端渲染，数据为静态快照，不实时刷新。

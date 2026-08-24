@@ -195,6 +195,12 @@ a { color: var(--red-deep); }
   box-shadow: var(--shadow);
 }
 .rental-map { width: 100%; min-width: 0; height: 430px; background: #dbe9e8; z-index: 1; }
+.map-load-error {
+  position: absolute; z-index: 900; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: min(86%, 360px); margin: 0; padding: 12px 14px; border: 1px solid #b8dfdb;
+  border-radius: 10px; background: rgba(255,255,255,.94); color: var(--red-deep);
+  box-shadow: var(--shadow); text-align: center; font-size: 13px; pointer-events: none;
+}
 .route-panel {
   position: relative; z-index: 2; min-width: 0; padding: 15px; border-top: 1px solid var(--rule);
   background: var(--card);
