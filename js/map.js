@@ -42,8 +42,9 @@
   });
 
   var markers = {};
-  var markerGroup = L.markerClusterGroup({ showCoverageOnHover: false, maxClusterRadius: 38, spiderfyOnMaxZoom: true, disableClusteringAtZoom: 17 });
+  var communityLayer = L.layerGroup().addTo(map);
   var routeLayer = null;
+  var activeLabel = null;
   var activeId = null;
 
   function money(value) {
@@ -52,6 +53,15 @@
 
   function minutes(seconds) {
     return seconds ? Math.max(1, Math.round(seconds / 60)) : "—";
+  }
+
+  function zoneRadius(item, active) {
+    var zoom = map.getZoom();
+    var listed = item.coverage === "beike_listed";
+    var radius = listed
+      ? (zoom <= 14 ? 14 : zoom === 15 ? 17 : zoom === 16 ? 20 : 23)
+      : (zoom <= 14 ? 10 : zoom === 15 ? 13 : zoom === 16 ? 16 : 18);
+    return active ? radius + 5 : radius;
   }
 
   function amapRouteUrl(item) {
@@ -98,10 +108,27 @@
 
   function setActive(item, options) {
     options = options || {};
-    if (activeId && markers[activeId] && markers[activeId].getElement()) markers[activeId].getElement().classList.remove("active");
+    if (activeId && markers[activeId]) {
+      markers[activeId].setStyle(markers[activeId].options.baseStyle);
+      markers[activeId].setRadius(zoneRadius(markers[activeId].options.communityItem, false));
+      if (markers[activeId].getElement()) markers[activeId].getElement().classList.remove("active");
+    }
     activeId = item.id;
     var marker = markers[item.id];
-    if (marker && marker.getElement()) marker.getElement().classList.add("active");
+    if (marker) {
+      marker.setStyle({ color: "#0b6267", fillColor: "#32aaa2", fillOpacity: 0.42, weight: 4, opacity: 1 });
+      marker.setRadius(zoneRadius(item, true));
+      marker.bringToFront();
+      if (marker.getElement()) marker.getElement().classList.add("active");
+    }
+    if (activeLabel) map.removeLayer(activeLabel);
+    var labelDirection = item.location[1] < data.station.location[1] ? "right" : "left";
+    activeLabel = L.tooltip({
+      permanent: true,
+      direction: labelDirection,
+      offset: labelDirection === "right" ? [12, 0] : [-12, 0],
+      className: "community-zone-label",
+    }).setLatLng(item.location).setContent(escapeHtml(item.name) + " · " + item.walkingM + "米").addTo(map);
     if (routeLayer) map.removeLayer(routeLayer);
     var casing = L.polyline(item.route, { color: "#f8fffe", weight: 11, opacity: 0.92, lineCap: "round", lineJoin: "round" });
     var route = L.polyline(item.route, { color: "#167d7f", weight: 6, opacity: 0.96, lineCap: "round", lineJoin: "round", className: "active-route" });
@@ -114,30 +141,33 @@
     function fitRoute() {
       if (options.focus !== false) map.fitBounds(bounds, { paddingTopLeft: [35, 35], paddingBottomRight: [35, 35], maxZoom: 17 });
     }
-    if (marker && options.focus !== false) {
-      markerGroup.zoomToShowLayer(marker, function () {
-        if (marker.getElement()) marker.getElement().classList.add("active");
-        fitRoute();
-      });
-    } else {
-      if (marker && marker.getElement()) marker.getElement().classList.add("active");
-      fitRoute();
-    }
+    fitRoute();
   }
 
   data.communities.forEach(function (item) {
     var listed = item.coverage === "beike_listed";
-    var icon = L.divIcon({
-      className: "map-marker " + (listed ? "listed" : "candidate"),
-      html: "<span></span>", iconSize: [24, 24], iconAnchor: [12, 12],
-    });
-    var marker = L.marker(item.location, { icon: icon, title: item.name, riseOnHover: true });
-    marker.bindTooltip(item.name + " · " + item.walkingM + "米", { direction: "top", offset: [0, -9] });
+    var baseStyle = listed
+      ? { color: "#0b6267", fillColor: "#28a19a", fillOpacity: 0.24, weight: 2, opacity: 0.9 }
+      : { color: "#c88428", fillColor: "#f1b85f", fillOpacity: 0.18, weight: 2, opacity: 0.82, dashArray: "5 4" };
+    var marker = L.circleMarker(item.location, Object.assign({
+      radius: zoneRadius(item, false),
+      className: "community-zone " + (listed ? "listed" : "candidate"),
+      bubblingMouseEvents: false,
+      baseStyle: baseStyle,
+      communityItem: item,
+    }, baseStyle));
+    marker.bindTooltip(item.name + " · " + item.walkingM + "米", { direction: "top", sticky: true, className: "community-zone-tooltip" });
     marker.on("click", function () { setActive(item); });
     markers[item.id] = marker;
-    markerGroup.addLayer(marker);
+    communityLayer.addLayer(marker);
   });
-  markerGroup.addTo(map);
+
+  map.on("zoomend", function () {
+    Object.keys(markers).forEach(function (id) {
+      var marker = markers[id];
+      marker.setRadius(zoneRadius(marker.options.communityItem, id === activeId));
+    });
+  });
 
   panel.addEventListener("click", function (event) {
     var button = event.target.closest("[data-map-filter]");

@@ -5,6 +5,7 @@ const data = JSON.parse(source.slice("window.MAP_DATA=".length, -1));
 const basemapSource = fs.readFileSync("data/basemap.js", "utf8").trim();
 const basemap = JSON.parse(basemapSource.slice("window.AMAP_BASEMAP=".length, -1));
 const indexHtml = fs.readFileSync("index.html", "utf8");
+const mapJs = fs.readFileSync("js/map.js", "utf8");
 const expectedExits = ["A", "B1", "B2", "C"];
 const actualExits = data.station.exits.map((exit) => exit.id);
 
@@ -43,4 +44,5 @@ assert(Array.isArray(basemap.bounds) && basemap.bounds.length === 2, "高德底�
 assert(fs.statSync(basemap.image).size > 500000, "高德底图图片已随网站本地发布");
 assert(indexHtml.includes("vendor/leaflet/leaflet.js") && !indexHtml.includes("unpkg.com"), "地图运行库不再依赖海外 CDN");
 assert(!indexHtml.includes("tile.openstreetmap.org"), "手机端不再请求 OpenStreetMap 在线瓦片");
+assert(mapJs.includes("L.circleMarker") && !mapJs.includes("markerClusterGroup"), "小区使用自适应位置光斑且不再聚合吞并");
 console.log("MAP ALL PASS ✔");
