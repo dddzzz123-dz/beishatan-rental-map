@@ -314,16 +314,16 @@
     );
   }
 
-  function renderTags(tags) {
+  function renderTags(tags, showAll) {
     if (!tags || !tags.length) return "";
-    var shown = tags.slice(0, 4);
+    var shown = showAll ? tags : tags.slice(0, 4);
     var html = shown.map(function (t) {
       var cls = "";
       if (t === "官方核验") cls = "tag-red";
       else if (t === "近地铁" || t === "自营") cls = "tag-plum";
       return '<span class="tag ' + cls + '">' + esc(t) + "</span>";
     }).join("");
-    if (tags.length > 4) html += '<span class="tag">+' + (tags.length - 4) + "</span>";
+    if (!showAll && tags.length > 4) html += '<span class="tag">+' + (tags.length - 4) + "</span>";
     return html;
   }
 
@@ -417,7 +417,7 @@
           '<div><dt>维护</dt><dd>' + esc(l.maintenance || "未知") + '</dd></div>' +
           '<div><dt>图片</dt><dd>' + n + ' 张</dd></div>' +
         '</dl>' +
-        '<div class="tag-list detail-tags">' + renderTags(l.tags) + '</div>' +
+        '<div class="tag-list detail-tags">' + renderTags(l.tags, true) + '</div>' +
         '<p class="detail-note">库存和价格以贝壳页面实时信息为准。</p>' +
         '<div class="detail-actions">' +
           '<button type="button" class="btn btn-fav ' + (isFav ? "is-fav" : "") + '" data-detail-action="fav">' + (isFav ? "★ 已收藏" : "☆ 收藏") + '</button>' +
