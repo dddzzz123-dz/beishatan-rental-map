@@ -307,7 +307,7 @@
             '<button type="button" class="btn btn-detail" data-action="detail" data-house="' + esc(l.houseCode) + '">大图详情</button>' +
             '<button type="button" class="btn btn-fav ' + isFav + '" data-action="fav" data-house="' + esc(l.houseCode) + '" aria-pressed="' + isFav + '">' + favLabel + "</button>" +
             '<button type="button" class="btn cmp-btn ' + isCmp + '" data-action="compare" data-house="' + esc(l.houseCode) + '" aria-pressed="' + isCmp + '">' + cmpLabel + "</button>" +
-            '<a class="btn btn-link" href="' + esc(l.detailUrl) + '" target="_blank" rel="noopener noreferrer">查看贝壳原房源<span class="ext">↗</span></a>' +
+            '<a class="btn btn-link" href="' + esc(l.detailUrl) + '" target="_blank" rel="noopener noreferrer" aria-label="查看贝壳原房源">贝壳房源<span class="ext">↗</span></a>' +
           "</div>" +
         "</div>" +
       "</article>"
