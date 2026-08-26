@@ -5,6 +5,7 @@ const Core = require("../js/core.js");
 const data = require("../data/rentals.json");
 
 const listings = (data.listings || []).map(Core.normalize);
+const expected = { total: 86, communities: 16, multi: 67, noneSingle: 19, images: 619, pages: 11 };
 let failures = 0;
 function assert(cond, msg) {
   if (cond) { console.log("  ok  " + msg); }
@@ -12,28 +13,30 @@ function assert(cond, msg) {
 }
 
 console.log("== 数据事实 ==");
-assert(listings.length === 69, "总量 = 69 (got " + listings.length + ")");
+assert(listings.length === expected.total, "总量 = " + expected.total + " (got " + listings.length + ")");
 const comms = Core.communityStats(listings);
-assert(Object.keys(comms).length === 10, "小区数 = 10 (got " + Object.keys(comms).length + ")");
+assert(Object.keys(comms).length === expected.communities, "小区数 = " + expected.communities + " (got " + Object.keys(comms).length + ")");
 const multi = listings.filter((l) => l.photoStatus === "multi").length;
-assert(multi === 67, "多图 = 67 (got " + multi + ")");
+assert(multi === expected.multi, "多图 = " + expected.multi + " (got " + multi + ")");
 const noneSingle = listings.length - multi;
-assert(noneSingle === 2, "无图/单图 = 2 (got " + noneSingle + ")");
+assert(noneSingle === expected.noneSingle, "无图/单图 = " + expected.noneSingle + " (got " + noneSingle + ")");
 const imgs = listings.reduce((a, l) => a + l.photos.length, 0);
-assert(imgs === 602, "相册图总数 = 602 (got " + imgs + ")");
-// community inventory sums to 69
+assert(imgs === expected.images, "相册图总数 = " + expected.images + " (got " + imgs + ")");
+// community inventory sums to total
 const sumInv = Object.keys(comms).reduce((a, c) => a + comms[c].inventory, 0);
-assert(sumInv === 69, "小区存量合计 = 69 (got " + sumInv + ")");
+assert(sumInv === expected.total, "小区存量合计 = " + expected.total + " (got " + sumInv + ")");
+assert(listings.filter((l) => (l.source || "").includes("安居客")).length === 17, "安居客新增候选 = 17");
+assert(listings.filter((l) => l.verificationStatus === "cross_platform_match").length === 1, "跨平台同价核验 = 1");
 
 console.log("\n== 筛选 ==");
 let f = Core.filterByConfig(listings, {});
-assert(f.length === 69, "无筛选 = 69 (got " + f.length + ")");
+assert(f.length === expected.total, "无筛选 = " + expected.total + " (got " + f.length + ")");
 f = Core.filterByConfig(listings, { rooms: [2] });
 assert(f.length > 0 && f.every((l) => l.rooms === 2), "仅两居，全部为 2 居 (" + f.length + " 套)");
 f = Core.filterByConfig(listings, { rooms: [3] });
 assert(f.length > 0 && f.every((l) => l.rooms === 3), "仅三居，全部为 3 居 (" + f.length + " 套)");
 f = Core.filterByConfig(listings, { onlyMulti: true });
-assert(f.length === 67, "仅多图 = 67 (got " + f.length + ")");
+assert(f.length === expected.multi, "仅多图 = " + expected.multi + " (got " + f.length + ")");
 f = Core.filterByConfig(listings, { minRent: 5000, maxRent: 9000 });
 assert(f.length > 0 && f.every((l) => l.rentYuanPerMonth >= 5000 && l.rentYuanPerMonth <= 9000), "租金 [5000,9000] 全部命中 (got " + f.length + ")");
 f = Core.filterByConfig(listings, { keyword: "中和家园" });
@@ -54,18 +57,18 @@ assert(Core.maintenanceDays(fresh[0].maintenance) <= Core.maintenanceDays(fresh[
 
 console.log("\n== 分页 ==");
 let pg = Core.paginate(listings, 1, 8);
-assert(pg.items.length === 8 && pg.total === 69, "第1页 8 套 / 共 69");
-assert(pg.pageCount === 9, "页数 = 9 (got " + pg.pageCount + ")");
-pg = Core.paginate(listings, 9, 8);
-assert(pg.items.length === 69 - 8 * 8, "第9页余 " + (69 - 8 * 8) + " 套 (got " + pg.items.length + ")");
+assert(pg.items.length === 8 && pg.total === expected.total, "第1页 8 套 / 共 " + expected.total);
+assert(pg.pageCount === expected.pages, "页数 = " + expected.pages + " (got " + pg.pageCount + ")");
+pg = Core.paginate(listings, expected.pages, 8);
+assert(pg.items.length === expected.total - 8 * (expected.pages - 1), "末页余 " + (expected.total - 8 * (expected.pages - 1)) + " 套 (got " + pg.items.length + ")");
 pg = Core.paginate(listings, 99, 8);
-assert(pg.page === 9, "超范围页被钳制到 9");
+assert(pg.page === expected.pages, "超范围页被钳制到 " + expected.pages);
 
 console.log("\n== 统计 ==");
 const stats = Core.overallStats(listings, comms);
-assert(stats.total === 69, "overallStats.total = 69");
-assert(stats.multiCount === 67, "overallStats.multiCount = 67");
-assert(stats.communityCount === 10, "overallStats.communityCount = 10");
+assert(stats.total === expected.total, "overallStats.total = " + expected.total);
+assert(stats.multiCount === expected.multi, "overallStats.multiCount = " + expected.multi);
+assert(stats.communityCount === expected.communities, "overallStats.communityCount = " + expected.communities);
 const medArr = listings.map((l) => l.rentYuanPerMonth).sort((a, b) => a - b);
 const expectMedian = medArr[Math.floor(medArr.length / 2)];
 assert(stats.medianRent === expectMedian, "Overall median = " + expectMedian + " (got " + stats.medianRent + ")");

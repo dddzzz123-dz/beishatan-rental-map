@@ -264,6 +264,20 @@
 
   function photoCountOf(listing) { return listing.photos.length || (listing.coverUrl ? 1 : 0); }
 
+  function sourceName(listing) {
+    return String(listing.source || "").indexOf("安居客") !== -1 ? "安居客" : "贝壳";
+  }
+
+  function sourceLinkLabel(listing, longForm) {
+    var platform = sourceName(listing);
+    return longForm ? "查看" + platform + "原房源" : platform + "房源";
+  }
+
+  function listingFreshness(listing) {
+    if (listing.maintenance) return listing.maintenance;
+    return (listing.snapshotDate || "日期未知") + " · " + sourceName(listing);
+  }
+
   function renderCard(l) {
     var n = photoCountOf(l);
     var low = l.photoStatus !== "multi" || n <= 1;
@@ -300,14 +314,14 @@
           '<p class="comm-line">' + esc(l.community) + '<span class="dot">·</span>' + esc(l.businessArea) + "</p>" +
           '<div class="meta-line">' +
             "<span>" + esc(l.floor || "楼层未知") + "</span>" +
-            "<span>" + esc(l.maintenance || "维护时间未知") + "</span>" +
+            "<span>" + esc(listingFreshness(l)) + "</span>" +
           "</div>" +
           '<div class="tag-list">' + renderTags(l.tags) + "</div>" +
           '<div class="card-actions">' +
             '<button type="button" class="btn btn-detail" data-action="detail" data-house="' + esc(l.houseCode) + '">大图详情</button>' +
             '<button type="button" class="btn btn-fav ' + isFav + '" data-action="fav" data-house="' + esc(l.houseCode) + '" aria-pressed="' + isFav + '">' + favLabel + "</button>" +
             '<button type="button" class="btn cmp-btn ' + isCmp + '" data-action="compare" data-house="' + esc(l.houseCode) + '" aria-pressed="' + isCmp + '">' + cmpLabel + "</button>" +
-            '<a class="btn btn-link" href="' + esc(l.detailUrl) + '" target="_blank" rel="noopener noreferrer" aria-label="查看贝壳原房源">贝壳房源<span class="ext">↗</span></a>' +
+            '<a class="btn btn-link" href="' + esc(l.detailUrl) + '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(sourceLinkLabel(l, true)) + '">' + esc(sourceLinkLabel(l, false)) + '<span class="ext">↗</span></a>' +
           "</div>" +
         "</div>" +
       "</article>"
@@ -415,11 +429,11 @@
           '<div><dt>图片</dt><dd>' + n + ' 张</dd></div>' +
         '</dl>' +
         '<div class="tag-list detail-tags">' + renderTags(l.tags) + '</div>' +
-        '<p class="detail-note">库存和价格以贝壳页面实时信息为准。</p>' +
+        '<p class="detail-note">采集于 ' + esc(l.snapshotDate || "未知日期") + '；库存和价格以' + esc(sourceName(l)) + '页面实时信息为准。</p>' +
         '<div class="detail-actions">' +
           '<button type="button" class="btn btn-fav ' + (isFav ? "is-fav" : "") + '" data-detail-action="fav">' + (isFav ? "★ 已收藏" : "☆ 收藏") + '</button>' +
           '<button type="button" class="btn cmp-btn ' + (isCmp ? "is-in" : "") + '" data-detail-action="compare">' + (isCmp ? "对比中" : "加入对比") + '</button>' +
-          '<a class="btn btn-link detail-source" href="' + esc(l.detailUrl) + '" target="_blank" rel="noopener noreferrer">查看贝壳原房源 <span class="ext">↗</span></a>' +
+          '<a class="btn btn-link detail-source" href="' + esc(l.detailUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(sourceLinkLabel(l, true)) + ' <span class="ext">↗</span></a>' +
         '</div>' +
       '</aside>';
     var activeThumb = byId.detailBody.querySelector(".detail-thumb.is-active");
@@ -486,7 +500,7 @@
             "<dt>标签</dt><dd>" + esc((l.tags || []).slice(0, 4).join(" · ")) + "</dd>" +
           "</dl>" +
           '<div class="cmp-actions">' +
-            '<a class="btn btn-link" href="' + esc(l.detailUrl) + '" target="_blank" rel="noopener noreferrer">查看贝壳原房源<span class="ext">↗</span></a>' +
+            '<a class="btn btn-link" href="' + esc(l.detailUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(sourceLinkLabel(l, true)) + '<span class="ext">↗</span></a>' +
           "</div>" +
         "</div>"
       );
@@ -670,16 +684,20 @@
 
   /* ---------- info modal ---------- */
   function renderInfo() {
+    var snapshots = DATA.sourceSnapshots || [];
+    var snapshotText = snapshots.length
+      ? snapshots.map(function (item) { return item.platform + " " + item.date + "（" + (item.count || item.walkableWholeRent || 0) + " 套）"; }).join("；")
+      : (DATA.updatedAt || "未知");
     $("infoBody").innerHTML =
       '<div class="info-block">' +
-        '<div class="info-kv"><b>采集日期</b><span>2026-08-24</span></div>' +
-        '<div class="info-kv"><b>数据来源</b><span>贝壳租房（北京·北沙滩站 列表页 + 详情页相册）</span></div>' +
-        '<div class="info-kv"><b>覆盖范围</b><span>' + listings.length + " 套整租两居/三居 · " + allCommunities.length + " 个小区 · " + (DATA.reportedTotal || listings.length) + " 套上报</span></div>" +
+        '<div class="info-kv"><b>采集快照</b><span>' + esc(snapshotText) + '</span></div>' +
+        '<div class="info-kv"><b>数据来源</b><span>贝壳详情相册快照 + 安居客公开列表页交叉更新</span></div>' +
+        '<div class="info-kv"><b>候选库</b><span>' + listings.length + " 套整租两居/三居 · " + allCommunities.length + " 个小区（跨平台近似重复已去重）</span></div>" +
         '<div class="info-kv"><b>图片</b><span>' + listings.filter(function (l) { return l.photoStatus === "multi"; }).length + " 套多图 · " + listings.length + " 套共" + listings.reduce(function (a, l) { return a + photoCountOf(l); }, 0) + " 张相册图</span></div>" +
       "</div>" +
       '<div class="info-note"><strong>重要说明</strong>：<ul>' +
-        "<li>地图中的步行距离和时间来自 Valhalla/OSM 步行路网，并比较北沙滩站 A、B1、B2、C 四个出口后选择最短路线；入口缺失时以 POI 中心点起算。</li>" +
-        "<li>库存与租金为采集时快照，<b>动态库存可能变化</b>；以贝壳页面实时为准。</li>" +
+        "<li>地图中的步行距离和时间来自高德 Web 服务，并比较北沙滩站 A、B1、B2、C 四个出口后选择最短路线；入口缺失时以 POI 中心点起算。</li>" +
+        "<li>贝壳为 8 月 24 日相册快照；安居客于 8 月 26 日读取公开首屏，第二页遇验证即停止。<b>这是候选库，不代表任一平台穷尽库存</b>。</li>" +
         "<li>“多图”按 ≥2 张真实房源图片判定；无图/单图房源已单独标注，不伪造成多图。</li>" +
         "<li>本页为纯静态工具，无第三方追踪、无 Cookie 读取、无密钥；外链使用 <code>noopener noreferrer</code>。</li>" +
         "<li>收藏与对比仅保存在本机 localStorage。</li>" +

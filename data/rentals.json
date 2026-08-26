@@ -1,7 +1,7 @@
 {
-  "scope": "北京15号线北沙滩站｜整租｜两居+三居",
+  "scope": "北京15号线北沙滩站｜整租｜两居+三居｜多平台候选库",
   "canonicalListUrl": "https://bj.zu.ke.com/ditiezufang/li43143633s46538455/rt200600000001l1l2/",
-  "reportedTotal": 69,
+  "reportedTotal": 86,
   "listings": [
     {
       "source": "贝壳租房浏览器列表页",
@@ -42,7 +42,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_ONR4PvIEF.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_yxZ3q6FO5.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 10
+      "photoCount": 10,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -61,7 +63,8 @@
         "官方核验",
         "近地铁",
         "集中供暖",
-        "随时看房"
+        "随时看房",
+        "跨平台同价核验"
       ],
       "brand": "链家",
       "maintenance": "今天维护",
@@ -84,7 +87,13 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_QaJuu8Y0Q.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_jfcEQUHlN.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 12
+      "photoCount": 12,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "cross_platform_match",
+      "crossPlatformUrls": [
+        "https://bj.zu.anjuke.com/fangyuan/4722503559062529"
+      ],
+      "lastCrossCheckedAt": "2026-08-26T12:26:05.621059+00:00"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -129,7 +138,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/b71847df9236a55c20e5657d4df30929.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/54b4d1529c99082c3940c250332efcd5.jpeg.780x439.jpg"
       ],
-      "photoCount": 11
+      "photoCount": 11,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -167,7 +178,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_A9dIBx90F.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_zCONEivty.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 7
+      "photoCount": 7,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -203,7 +216,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_4TaEm6ZLq.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_NTyECzUyA.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 7
+      "photoCount": 7,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -241,7 +256,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_41l6TLhh8.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_1BRfq7UId.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 6
+      "photoCount": 6,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -277,7 +294,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_gpEevUAgj.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc1_eAbtXxhLN.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 7
+      "photoCount": 7,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -320,7 +339,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/7c71c0f0cbb3028d2f7f200b550942fd.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/f6802b9463c959fe5621a5d9d1ce2606.jpeg.780x439.jpg"
       ],
-      "photoCount": 11
+      "photoCount": 11,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -360,7 +381,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_2aCWQabNu.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_tOUdfpPgi.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 11
+      "photoCount": 11,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -397,7 +420,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/17863515304561786351528928_424792397.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/17863515444931786351543029_424792396.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 8
+      "photoCount": 8,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -442,7 +467,9 @@
         "https://ke-image.ljcdn.com/rent-house-1/img/2b659455896a8fbc9fd92302ea46835f-1763799736705/bd9abeb60cc63546f3430320291589e5.jpg.780x439.jpg",
         "https://ke-image.ljcdn.com/rent-house-1/img/2b659455896a8fbc9fd92302ea46835f-1763800272816/3228305cdc53c6c4c7fb69f17fdeb480.jpg.780x439.jpg"
       ],
-      "photoCount": 14
+      "photoCount": 14,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -477,7 +504,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_n7WLZSIWB.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_a6PxAdNmt.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 6
+      "photoCount": 6,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -515,7 +544,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_ZPJHrFytj.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_WHbmwQ637.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 9
+      "photoCount": 9,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -551,7 +582,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_K2RNK4kUJ.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_2l26DhypI.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 7
+      "photoCount": 7,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -581,7 +614,9 @@
       "photoUrls": [
         "https://ke-image.ljcdn.com/rent-front-image/2a778015dbbab30fcde0a978314ce007.png.780x439.jpg"
       ],
-      "photoCount": 1
+      "photoCount": 1,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -632,7 +667,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/17868646398011786864638672_2012881016.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/17868646505661786864649475_2012881017.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 20
+      "photoCount": 20,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -676,7 +713,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_CUffHNY9v.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_LWSbNrJ3w.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 12
+      "photoCount": 12,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -716,7 +755,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/1b30b844896e0e2ea5d87b3d0742fde8.png!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/1843fa644c8f41e1e4e83519e4020f2a.png!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 10
+      "photoCount": 10,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -752,7 +793,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_ZHN6ORrEH.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_ToY0fwu9O.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 6
+      "photoCount": 6,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -787,7 +830,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_R6PjVDpao.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_Z3N9Ukoik.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 6
+      "photoCount": 6,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -823,7 +868,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/e34182b5-c38f-40e8-a17a-9efe759329a9_1000.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/12c138ee-1b9a-4838-a469-06efa682ce50_1000.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 7
+      "photoCount": 7,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -863,7 +910,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_AHQXfOqZO.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_6BpjpphP9.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 9
+      "photoCount": 9,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -899,7 +948,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_YMNbEsPAc.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_UkBq6f38r.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 7
+      "photoCount": 7,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -937,7 +988,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_iJd0iuODf.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_1lpmxtmsQ.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 9
+      "photoCount": 9,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -974,7 +1027,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_fSIAyO83O.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_B2ju6oS13.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 6
+      "photoCount": 6,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1012,7 +1067,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_25PjUXf6F.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_k6R4yHokC.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 8
+      "photoCount": 8,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1047,7 +1104,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_pMkG0Ffz2.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_1OfoFY6pb.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 7
+      "photoCount": 7,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1082,7 +1141,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_AqNcP6f64.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_5Cm1yuTgL.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 6
+      "photoCount": 6,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1118,7 +1179,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_tXY4NkFDP.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_4GsWbfzK4.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 7
+      "photoCount": 7,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1155,7 +1218,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_HqHVIFQbd.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_Jlu1tcaxW.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 8
+      "photoCount": 8,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1189,7 +1254,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_oxJNEMX3J.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_EWGMOD21M.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 6
+      "photoCount": 6,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1225,7 +1292,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_dCZm64AMq.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_BblM2rZtP.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 7
+      "photoCount": 7,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1263,7 +1332,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/b3630806-5276-4a38-87e3-fc76065c6018.jpg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/be0b52b0-87a2-4e3b-9c29-6d3be236a12c.jpg.780x439.jpg"
       ],
-      "photoCount": 6
+      "photoCount": 6,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1299,7 +1370,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_PCLXLjvxG.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_r0Mr2Eyo8.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 6
+      "photoCount": 6,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1337,7 +1410,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_Rkh6e42bV.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_pEeWRXQ2v.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 10
+      "photoCount": 10,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1376,7 +1451,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/3eb6e421-8d69-44d0-939f-2d0760c15766.jpg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/dd052116-d939-435c-9604-a7c23aba5923.png.780x439.jpg"
       ],
-      "photoCount": 7
+      "photoCount": 7,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1416,7 +1493,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/8e609b8336ce787b5913f78215797675.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/4e8ad75e91cb5bdcb07589b90e72a9fd.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 11
+      "photoCount": 11,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1455,7 +1534,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/2de1121ffb926c8ff539953df361a4a8.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/50bc6ad2358ae5265f39259620098faf.jpeg.780x439.jpg"
       ],
-      "photoCount": 8
+      "photoCount": 8,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1496,7 +1577,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_wvCWDQ5k1.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_14txHleFd.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 11
+      "photoCount": 11,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1532,7 +1615,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/033d649f-a68a-4bd3-9340-7a40aa934886.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/deb942c2-0a1c-42e4-851e-be8935e6f0ab.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 7
+      "photoCount": 7,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1566,7 +1651,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_ZG4ydpzqM.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_J37qM5RWk.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 6
+      "photoCount": 6,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1595,7 +1682,9 @@
       "page": 2,
       "collectedAt": "2026-08-23T17:05:27.652Z",
       "photoUrls": [],
-      "photoCount": 0
+      "photoCount": 0,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1635,7 +1724,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/17843722520_HE8FNbDwD.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/17843722650_FXIjr2Z58.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 10
+      "photoCount": 10,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1674,7 +1765,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/pc0_o9Sw6fWdv.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/pc0_PYnA2piCx.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 8
+      "photoCount": 8,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1713,7 +1806,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/54a2bef1fb0e5cf7440f92ac1e20ae30.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/baa1be02167010f94daa750be7347ac5.jpeg.780x439.jpg"
       ],
-      "photoCount": 7
+      "photoCount": 7,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1763,7 +1858,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/812537fe-1592-402e-849d-3cc141721732.jpg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/f0f67fef-96c9-4ddb-a900-ac5f2bdeb020.jpg.780x439.jpg"
       ],
-      "photoCount": 18
+      "photoCount": 18,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1811,7 +1908,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/65b46582-1de5-4d6d-9e51-2adad5526cb8.jpg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/69ca358a-babe-4163-85c9-a2c7553dc9bb.jpg.780x439.jpg"
       ],
-      "photoCount": 16
+      "photoCount": 16,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1857,7 +1956,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/abe44dd182364f2ca38d029b856db6b2.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/ab99092ee0a0b9093ab8ffb77dd0b4b4.jpeg.780x439.jpg"
       ],
-      "photoCount": 13
+      "photoCount": 13,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1901,7 +2002,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/cf170c3fc92d5bf1b0e916700e451d96.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/534829e9737f31a37b675ea7be3018a5.jpeg.780x439.jpg"
       ],
-      "photoCount": 12
+      "photoCount": 12,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1942,7 +2045,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/a9c12fb9a0f29e3e98670823269d7eb9.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/298b68c3935b52a3a912d977951026d9.jpeg.780x439.jpg"
       ],
-      "photoCount": 9
+      "photoCount": 9,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -1987,7 +2092,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/35bbed75d95aea5ffc14744e88a3a19f.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/d6ff0cec6bc8af6884e7dbfcc98b2cb8.jpeg.780x439.jpg"
       ],
-      "photoCount": 13
+      "photoCount": 13,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2028,7 +2135,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/1fa9daa2ef0b404ef3d749d095744c45.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/8fcfd7c4444266def3fdef4a374bfc32.jpeg.780x439.jpg"
       ],
-      "photoCount": 9
+      "photoCount": 9,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2072,7 +2181,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/937105083c35501ebfae3d5ded1c342d.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/110000-frame/9a7cfc88-8605-4606-aff3-0562f4f85b2c0.jpg.780x439.jpg"
       ],
-      "photoCount": 10
+      "photoCount": 10,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2112,7 +2223,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/03ebcaa21ee8237451a7eed6099a6099.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/95829f74-d6b9-4215-aae4-483e696473d8.png.780x439.jpg"
       ],
-      "photoCount": 9
+      "photoCount": 9,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2158,7 +2271,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/3387623754f67ba70d0c96403ec07d38.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/28d15565b08bef54f1cf546f4b42dbca.jpeg.780x439.jpg"
       ],
-      "photoCount": 13
+      "photoCount": 13,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2198,7 +2313,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/0a9a9df0d383b2143f36b60b36903915.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/b400ed5ee5d9b939079a03a062183215.jpeg.780x439.jpg"
       ],
-      "photoCount": 7
+      "photoCount": 7,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2241,7 +2358,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/c52e86809bea3bfca7818ff995151f87.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/3f0569f8260fbda1a171df68b31a1daa.jpeg.780x439.jpg"
       ],
-      "photoCount": 11
+      "photoCount": 11,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2282,7 +2401,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/1301744737e4245340b6d66b70d5cd1d.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/836bdf70d2029cb3ebc9d30921e8e4ac.jpeg.780x439.jpg"
       ],
-      "photoCount": 10
+      "photoCount": 10,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2319,7 +2440,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/5eda4499926dd48881d92c76386da9d7.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/60208716c3bff01bdd2837ab4e613711.jpeg.780x439.jpg"
       ],
-      "photoCount": 5
+      "photoCount": 5,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2360,7 +2483,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/a980c369-630d-4971-b214-16704f8941ad.jpg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/36a6a1d0-eff6-408e-bc68-9b74dc2874da.jpg.780x439.jpg"
       ],
-      "photoCount": 9
+      "photoCount": 9,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2401,7 +2526,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/499a5fe2a2e64328a2be8a5e78ab5a87.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/110000-frame/22532527-4605-4ec9-9666-da766daa66c15.jpg.780x439.jpg"
       ],
-      "photoCount": 9
+      "photoCount": 9,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2439,7 +2566,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/f173a76f9db9eaec3f2f80c79712fc5f.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/4ae0504d11d8faf188876f8b5959a61b.jpeg.780x439.jpg"
       ],
-      "photoCount": 5
+      "photoCount": 5,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2478,7 +2607,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/e377d943f49c82e45449bd941d9c499a.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/686c189cc39346da63e08c35fd80b30d.jpeg.780x439.jpg"
       ],
-      "photoCount": 6
+      "photoCount": 6,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2522,7 +2653,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/d1e812c667af5eefd88f2725ebe4c3f2.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/4f0a62659e65d306ac9f61fca9537871.jpeg.780x439.jpg"
       ],
-      "photoCount": 11
+      "photoCount": 11,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2562,7 +2695,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/c2facc837beb8c6cc680611e6310ae88.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/f014d27a127034e0be5b4fcc3b9d5a95.jpeg.780x439.jpg"
       ],
-      "photoCount": 8
+      "photoCount": 8,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2598,7 +2733,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/df3913c6afd6648fea2eeac2be873303.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/4a700cd032f49267dd09d55665f2626c.jpeg.780x439.jpg"
       ],
-      "photoCount": 4
+      "photoCount": 4,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2636,7 +2773,9 @@
         "https://ke-image.ljcdn.com/lease-image/house/d2d3a8998e195a785ce886cbc037039d.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/7d84b39f3e270a735a9dfdad95c2a252.jpeg.780x439.jpg"
       ],
-      "photoCount": 5
+      "photoCount": 5,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2674,7 +2813,9 @@
         "https://ke-image.ljcdn.com/110000-inspection/200a44a8-52ee-4627-8603-22ec10166f93.jpg!m_fill,w_780,h_439,l_fbk,o_auto",
         "https://ke-image.ljcdn.com/110000-inspection/7ca5414f-0a7c-4325-9581-642aae739aad.jpg!m_fill,w_780,h_439,l_fbk,o_auto"
       ],
-      "photoCount": 5
+      "photoCount": 5,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
     },
     {
       "source": "贝壳租房浏览器列表页",
@@ -2727,7 +2868,590 @@
         "https://ke-image.ljcdn.com/lease-image/house/ef5abc21033901d2e5b59dc755cc0831.jpeg.780x439.jpg",
         "https://ke-image.ljcdn.com/lease-image/house/6e3c6453544e170ee3573b123dc06a9e.jpeg.780x439.jpg"
       ],
-      "photoCount": 20
+      "photoCount": 20,
+      "snapshotDate": "2026-08-24",
+      "verificationStatus": "historical_snapshot"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4667889141310470",
+      "title": "整租·中和家园 2室1厅",
+      "sourceTitle": "真实 房源 南北大两居 大客厅",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4667889141310470",
+      "rentYuanPerMonth": 6600,
+      "district": null,
+      "businessArea": null,
+      "community": "中和家园",
+      "area": "73㎡",
+      "orientation": null,
+      "layout": "2室1厅",
+      "floor": "低层(共6层)",
+      "tags": [
+        "安居客",
+        "整租",
+        "南北",
+        "8/15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/f5b49fc1c5bf8386c991405d2ba7afe6/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/f5b49fc1c5bf8386c991405d2ba7afe6/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4708373089345543",
+      "title": "整租·北沙滩 1号院 2室1厅",
+      "sourceTitle": "两居整租 南 北沙滩 紧邻中科院 东畔科技园 主卧大阳台",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4708373089345543",
+      "rentYuanPerMonth": 6800,
+      "district": null,
+      "businessArea": null,
+      "community": "北沙滩1号院",
+      "area": "57.2㎡",
+      "orientation": "南",
+      "layout": "2室1厅",
+      "floor": "共5层",
+      "tags": [
+        "安居客",
+        "整租",
+        "朝南",
+        "15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/c557254e718b5f87d2994c16d2d3b64e/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/c557254e718b5f87d2994c16d2d3b64e/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4706926568071175",
+      "title": "整租·北沙滩 1号院 2室1厅",
+      "sourceTitle": "整租两居室 南 北沙滩 紧邻东畔科技园 中科院 干净宽敞明亮",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4706926568071175",
+      "rentYuanPerMonth": 7000,
+      "district": null,
+      "businessArea": null,
+      "community": "北沙滩1号院",
+      "area": "64.4㎡",
+      "orientation": null,
+      "layout": "2室1厅",
+      "floor": "共5层",
+      "tags": [
+        "安居客",
+        "整租",
+        "南北",
+        "15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/e43530fb0bfb2071258e0608962a2cf1/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/e43530fb0bfb2071258e0608962a2cf1/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4665903059230727",
+      "title": "整租·北沙滩 1号院 2室1厅",
+      "sourceTitle": "正南向 北沙滩 1号院 15号线地铁旁 看房方便 价格可谈",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4665903059230727",
+      "rentYuanPerMonth": 5500,
+      "district": null,
+      "businessArea": null,
+      "community": "北沙滩1号院",
+      "area": "50.7㎡",
+      "orientation": "南",
+      "layout": "2室1厅",
+      "floor": "共5层",
+      "tags": [
+        "安居客",
+        "整租",
+        "朝南",
+        "15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/63fb4926515e9633e6bb3dcd0d150724/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/63fb4926515e9633e6bb3dcd0d150724/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4687495337305093",
+      "title": "整租·中和家园 2室1厅",
+      "sourceTitle": "真实在租，中和家园大两居室，随时看房",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4687495337305093",
+      "rentYuanPerMonth": 6600,
+      "district": null,
+      "businessArea": null,
+      "community": "中和家园",
+      "area": "72㎡",
+      "orientation": null,
+      "layout": "2室1厅",
+      "floor": "低层(共6层)",
+      "tags": [
+        "安居客",
+        "整租",
+        "南北",
+        "8/15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/8a52ff03c004997949eaeb2bcfb46f28/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/8a52ff03c004997949eaeb2bcfb46f28/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4719661155263499",
+      "title": "整租·中和家园 3室1厅",
+      "sourceTitle": "真实在租，中和家园大三居，电梯高层无遮挡",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4719661155263499",
+      "rentYuanPerMonth": 9600,
+      "district": null,
+      "businessArea": null,
+      "community": "中和家园",
+      "area": "114㎡",
+      "orientation": null,
+      "layout": "3室1厅",
+      "floor": "高层(共14层)",
+      "tags": [
+        "安居客",
+        "整租",
+        "东北",
+        "有电梯",
+        "8/15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/695c1411c0669596465388666ca12e38/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/695c1411c0669596465388666ca12e38/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4722517921849352",
+      "title": "整租·北沙滩 1号院 2室2厅",
+      "sourceTitle": "南北通透 2室2厅 北沙滩 1号院",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4722517921849352",
+      "rentYuanPerMonth": 9300,
+      "district": null,
+      "businessArea": null,
+      "community": "北沙滩1号院",
+      "area": "111.3㎡",
+      "orientation": null,
+      "layout": "2室2厅",
+      "floor": "高层(共6层)",
+      "tags": [
+        "安居客",
+        "整租",
+        "南北",
+        "15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/7d10659f95d4cb74ff40c196f23bb730/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/7d10659f95d4cb74ff40c196f23bb730/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4703265543169028",
+      "title": "整租·龙欣苑 2室1厅",
+      "sourceTitle": "北沙滩 中科院亚投行北师大附中森林公园懿品阁精装南北2居室！急",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4703265543169028",
+      "rentYuanPerMonth": 6400,
+      "district": null,
+      "businessArea": null,
+      "community": "龙欣苑小区",
+      "area": "53.8㎡",
+      "orientation": null,
+      "layout": "2室1厅",
+      "floor": "低层(共6层)",
+      "tags": [
+        "安居客",
+        "整租",
+        "南北",
+        "8/15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/541d23e0ff2f83a9c8df576ca2fd02c3/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/541d23e0ff2f83a9c8df576ca2fd02c3/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4680372522082304",
+      "title": "整租·北沙滩 1号院 2室1厅",
+      "sourceTitle": "正南 2室1厅 北沙滩 1号院",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4680372522082304",
+      "rentYuanPerMonth": 5500,
+      "district": null,
+      "businessArea": null,
+      "community": "北沙滩1号院",
+      "area": "50.7㎡",
+      "orientation": "南",
+      "layout": "2室1厅",
+      "floor": "共5层",
+      "tags": [
+        "安居客",
+        "整租",
+        "朝南",
+        "15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/63fb4926515e9633e6bb3dcd0d150724/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/63fb4926515e9633e6bb3dcd0d150724/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4724439237500937",
+      "title": "整租·双泉堡甲2号院 2室1厅",
+      "sourceTitle": "北沙滩 中日友好医院 双泉堡精装修两居室",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4724439237500937",
+      "rentYuanPerMonth": 6300,
+      "district": null,
+      "businessArea": null,
+      "community": "双泉堡甲2号院",
+      "area": "54.9㎡",
+      "orientation": null,
+      "layout": "2室1厅",
+      "floor": "共4层",
+      "tags": [
+        "安居客",
+        "整租",
+        "西南",
+        "15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/2a77d0037b1668e9d93f4cac5c9de575/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/2a77d0037b1668e9d93f4cac5c9de575/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4722603213217806",
+      "title": "整租·北沙滩 8号院 3室1厅",
+      "sourceTitle": "北沙滩 8号院 有电梯 有视频 3居室 随时能看 价格可谈",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4722603213217806",
+      "rentYuanPerMonth": 6750,
+      "district": null,
+      "businessArea": null,
+      "community": "北沙滩8号院",
+      "area": "78.2㎡",
+      "orientation": "西",
+      "layout": "3室1厅",
+      "floor": "低层(共18层)",
+      "tags": [
+        "安居客",
+        "整租",
+        "朝西",
+        "有电梯",
+        "8/15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/30c64609cecabb09e3135be9d42402ee/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/30c64609cecabb09e3135be9d42402ee/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4716019886350349",
+      "title": "整租·北沙滩 8号院 2室1厅",
+      "sourceTitle": "北沙滩 8号院 超大卧室 有视频 找1家人客户 跟业主签约可看",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4716019886350349",
+      "rentYuanPerMonth": 6750,
+      "district": null,
+      "businessArea": null,
+      "community": "北沙滩8号院",
+      "area": "107.5㎡",
+      "orientation": null,
+      "layout": "2室1厅",
+      "floor": "中层(共6层)",
+      "tags": [
+        "安居客",
+        "整租",
+        "南北",
+        "8/15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/a7ff642aa8f3fdc7299bc5659e86abdd/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/a7ff642aa8f3fdc7299bc5659e86abdd/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4718620257201158",
+      "title": "整租·名苑雅居 2室2厅",
+      "sourceTitle": "名苑雅居 2室2厅1卫 精装修",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4718620257201158",
+      "rentYuanPerMonth": 8800,
+      "district": null,
+      "businessArea": null,
+      "community": "名苑雅居",
+      "area": "81.5㎡",
+      "orientation": "南",
+      "layout": "2室2厅",
+      "floor": "中层(共13层)",
+      "tags": [
+        "安居客",
+        "整租",
+        "朝南",
+        "有电梯",
+        "8/15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/5d1ff5c3a102164cde77afbb5e0c1588/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/5d1ff5c3a102164cde77afbb5e0c1588/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4654808701165570",
+      "title": "整租·北沙滩 6号院 2室1厅",
+      "sourceTitle": "15号线 北沙滩 地铁口南沙滩可朋友两人合住，采光好月付免押",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4654808701165570",
+      "rentYuanPerMonth": 6300,
+      "district": null,
+      "businessArea": null,
+      "community": "北沙滩6号院",
+      "area": "51.2㎡",
+      "orientation": "南",
+      "layout": "2室1厅",
+      "floor": "中层(共6层)",
+      "tags": [
+        "安居客",
+        "整租",
+        "朝南",
+        "15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/002289d9d9217d460259958ae464a19f/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/002289d9d9217d460259958ae464a19f/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4715878040202243",
+      "title": "整租·南沙滩汽车南院 2室1厅",
+      "sourceTitle": "北沙滩 地铁站附近 南沙滩精装修两居室 可月付可用公积金",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4715878040202243",
+      "rentYuanPerMonth": 6800,
+      "district": null,
+      "businessArea": null,
+      "community": "汽车南院小区",
+      "area": "63㎡",
+      "orientation": null,
+      "layout": "2室1厅",
+      "floor": "中层(共6层)",
+      "tags": [
+        "安居客",
+        "整租",
+        "南北",
+        "8/15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/b347b0ab859f7df5f278073006fa7f67/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/b347b0ab859f7df5f278073006fa7f67/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4720137673843719",
+      "title": "整租·北沙滩 1号院 2室1厅",
+      "sourceTitle": "北沙滩 1号院两居室 南向可月付可用公积金 北沙滩 奥林匹克公园",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4720137673843719",
+      "rentYuanPerMonth": 6500,
+      "district": null,
+      "businessArea": null,
+      "community": "北沙滩1号院",
+      "area": "65.3㎡",
+      "orientation": "南",
+      "layout": "2室1厅",
+      "floor": "中层(共6层)",
+      "tags": [
+        "安居客",
+        "整租",
+        "朝南",
+        "15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/69b40ea662595afb49b326dc4e06abeb/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/69b40ea662595afb49b326dc4e06abeb/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
+    },
+    {
+      "source": "安居客公开租房列表页",
+      "houseCode": "AJK4717111927922698",
+      "title": "整租·北沙滩 1号院 2室1厅",
+      "sourceTitle": "整租 北沙滩 北沙滩 1号院2室1厅",
+      "detailUrl": "https://bj.zu.anjuke.com/fangyuan/4717111927922698",
+      "rentYuanPerMonth": 6800,
+      "district": null,
+      "businessArea": null,
+      "community": "北沙滩1号院",
+      "area": "57.2㎡",
+      "orientation": "南",
+      "layout": "2室1厅",
+      "floor": "共5层",
+      "tags": [
+        "安居客",
+        "整租",
+        "朝南",
+        "15号线"
+      ],
+      "brand": "安居客",
+      "maintenance": null,
+      "coverUrl": "https://pic1.ajkimg.com/display/anjuke/c557254e718b5f87d2994c16d2d3b64e/240x180c.jpg?t=1&srotate=1",
+      "photoStatus": "none_or_single",
+      "listPageUrl": "https://bj.zu.anjuke.com/fangyuan/?kw=%E5%8C%97%E6%B2%99%E6%BB%A9",
+      "page": 1,
+      "collectedAt": "2026-08-26T12:26:05.621059+00:00",
+      "photoUrls": [
+        "https://pic1.ajkimg.com/display/anjuke/c557254e718b5f87d2994c16d2d3b64e/240x180c.jpg?t=1&srotate=1"
+      ],
+      "photoCount": 1,
+      "snapshotDate": "2026-08-26",
+      "verificationStatus": "listed_on_source"
     }
   ],
   "detailProgress": {
@@ -2750,12 +3474,30 @@
     }
   ],
   "startedAt": "2026-08-23T17:05:33.015Z",
-  "updatedAt": "2026-08-23T17:07:36.268Z",
+  "updatedAt": "2026-08-26T12:26:05.621059+00:00",
   "completedAt": "2026-08-23T17:16:11.698Z",
   "summary": {
     "listingCount": 69,
     "multiPhotoCount": 67,
     "noneOrSingleCount": 2,
     "totalPhotos": 602
-  }
+  },
+  "sourceSnapshots": [
+    {
+      "platform": "贝壳",
+      "date": "2026-08-24",
+      "status": "historical_snapshot",
+      "count": 69
+    },
+    {
+      "platform": "安居客",
+      "date": "2026-08-26",
+      "status": "one_public_page_then_blocked",
+      "raw": 60,
+      "walkableWholeRent": 18,
+      "added": 17,
+      "crossChecked": 1
+    }
+  ],
+  "coverageNote": "安居客公开结果页首屏已采集；第二页触发验证后停止。本页是去重候选库，不代表平台穷尽库存。"
 }
